@@ -31,7 +31,7 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
