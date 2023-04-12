@@ -12,7 +12,7 @@ import { ChatsComponent } from './components/chats/chats.component';
 import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -29,10 +29,6 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-
-  ],
-  exports: [
-    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
