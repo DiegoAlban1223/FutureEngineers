@@ -13,7 +13,7 @@ import { ListChatsComponent } from './components/chats/list-chats/list-chats.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //////////import { ListChatsComponent } from './components/list-chats/list-chats.component';
 //import { ListChatsComponent } from './component/list-chats/list-chats.component';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-  
+
   ],
   exports: [
     MatTableModule
