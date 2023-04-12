@@ -9,7 +9,8 @@ import { ChatsService } from 'src/app/services/chats.service';
   styleUrls: ['./list-chats.component.css']
 })
 export class ListChatsComponent implements OnInit {
-  dataSource:MatTableDataSource<Chats>=new MatTableDataSource();
+  dataSource:MatTableDataSource<Chats>=new MatTableDataSource();//creo q  no se instalo bien el angular material
+
   displayedColumns:String[]=['Codigo','Mensajedelalumno','Mensajedeltutor','fechadeenvio','fechaderecepcion']
   constructor(private as:ChatsService) { }
 

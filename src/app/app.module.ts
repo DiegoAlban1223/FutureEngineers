@@ -1,4 +1,4 @@
-import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
+//import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,10 +10,10 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { HttpClientModule } from '@angular/common/http';
 import { ChatsComponent } from './components/chats/chats.component';
 import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //////////import { ListChatsComponent } from './components/list-chats/list-chats.component';
 //import { ListChatsComponent } from './component/list-chats/list-chats.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { MatTableModule } from '@angular/material/table'
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
