@@ -30,6 +30,9 @@ module.exports = function () {
         fecha_recepcion: "2023-04-12T12:32:13Z",
 	}
     ],
+    Users: [
+
+    ],
     books:[
       {
         id: 1,

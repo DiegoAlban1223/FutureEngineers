@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
     AddStudentComponent,
     ChatsComponent,
     ListChatsComponent,
+    ListStudentComponent,
     ////////////ListChatsComponent,
     //ListChatsComponent,
     // ChatsComponent
