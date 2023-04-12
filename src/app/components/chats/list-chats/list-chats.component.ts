@@ -1,5 +1,5 @@
+import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
 import { Chats } from 'src/app/model/Chats';
 import { ChatsService } from 'src/app/services/chats.service';
 
