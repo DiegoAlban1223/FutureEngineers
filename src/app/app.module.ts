@@ -15,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { ListChatsComponent } from './component/list-chats/list-chats.component';
 import { MatTableModule } from '@angular/material/table';
 import { UsersComponent } from './components/users/users.component';
-import { ListUsersComponent } from './components/Users/list-users/list-users.component';
+import { ListUsersComponent } from './components/users/list-users/list-users.component';
 
 @NgModule({
   declarations: [

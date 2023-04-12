@@ -31,7 +31,28 @@ module.exports = function () {
 	}
     ],
     Users: [
-
+          {id: 1,
+          rol: "Tutor",
+          nombre_completo: "Juan Enrique Perez",
+          correo_electronico: "JEnrique@Hotmail.com",
+          contrasena: "ABCW1231!"
+        },
+        {id: 2,
+          rol: "Alumno",
+          nombre_completo: "Jose Fabrizo Guzman",
+          correo_electronico: "Guzman@Hotmail.com",
+          contrasena: "JJGH236585"
+        },  {id: 3,
+          rol: "Tutor",
+          nombre_completo: "Hilary Morales Pereyna",
+          correo_electronico: "Morales@Hotmail.com",
+          contrasena: "Gaaa24544$$"
+        },  {id: 4,
+          rol: "Alumno",
+          nombre_completo: "Allison Jimenez Zorrilla",
+          correo_electronico: "Jimenez@Hotmail.com",
+          contrasena: "BNM214///"
+        }
     ],
     books:[
       {
