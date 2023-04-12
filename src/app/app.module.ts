@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //////////import { ListChatsComponent } from './components/list-chats/list-chats.component';
 //import { ListChatsComponent } from './component/list-chats/list-chats.component';
 import { MatTableModule } from '@angular/material/table';
+import { UsersComponent } from './components/users/users.component';
+import { ListUsersComponent } from './components/Users/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { MatTableModule } from '@angular/material/table';
     ChatsComponent,
     ListChatsComponent,
     ListStudentComponent,
+    UsersComponent,
+    ListUsersComponent,
     ////////////ListChatsComponent,
     //ListChatsComponent,
     // ChatsComponent
