@@ -1,6 +1,6 @@
-import {Simulations} from './../../../model/simulations';
+import { Simulations } from './../../../model/simulations';
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table'
+import { MatTableDataSource } from '@angular/material/table'
 import { SimulationsService } from 'src/app/service/simulations.service';
 
 @Component({
@@ -10,13 +10,23 @@ import { SimulationsService } from 'src/app/service/simulations.service';
 })
 export class SimulationListarComponent implements OnInit {
 
-  dataSource: MatTableDataSource<Simulations>=new MatTableDataSource();
+  dataSource: MatTableDataSource<Simulations> = new MatTableDataSource();
+
   displayedColumns:string[]=['codigoC','nombreC','planC','metodologiaC','duracionC']
 
-  constructor(private as:SimulationsService) { }
+  //intento con el  card
+ // simulations: any;
+  constructor(private as: SimulationsService) { }
 
   ngOnInit(): void {
-    this.as.list().subscribe(data=>{
+    //this.as.list().subscribe(result => { this.simulations = result });
+
+
+    this.as.list().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+    })
+
+    this.as.getList().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
     })
   }
