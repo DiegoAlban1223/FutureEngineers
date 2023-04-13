@@ -28,22 +28,7 @@ module.exports = function () {
 	      mensaje_tutor: "Exacto hoy la clase sera muy dinamica",
         fecha_envio: "2023-04-12T12:32:12Z",
         fecha_recepcion: "2023-04-12T12:32:13Z",
-	}
-    ],
-    books:[
-      {
-        id: 1,
-        nameBook: "Las leyes",
-	      nHojas: "145",
-        publicationDateAuthor: "2022-09-09",
-        author:
-        {
-          id:1,
-          nameAuthor: "Luis Pérez Reyes",
-          birthDateAuthor: "2000-09-10",
-          emailAuthor:"lperez@gmail.com",
-        }
-      },
+	    }
     ]
   }
   return data
