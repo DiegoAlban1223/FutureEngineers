@@ -17,6 +17,7 @@ export class ListChatsComponent implements OnInit {
   ngOnInit(): void {
     this.as.list().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource;
     })
   }
 }
