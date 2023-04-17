@@ -13,6 +13,8 @@ import { ListChatsComponent } from './components/chats/list-chats/list-chats.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddChatsComponent } from './components/chats/add-chats/add-chats.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
     AddStudentComponent,
     ChatsComponent,
     ListChatsComponent,
+    AddChatsComponent,
 
   ],
   imports: [
@@ -29,6 +32,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
