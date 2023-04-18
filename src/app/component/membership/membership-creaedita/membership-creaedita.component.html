@@ -1,0 +1,53 @@
+<app-navbar></app-navbar> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Membresia</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="text-align: center;" >
+        <h1>Registro de Membresias</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="Código" formControlName="id">
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Monto a Pagar</mat-label>
+          <input matInput placeholder="monto_pago" formControlName="monto_pago">
+        </mat-form-field>
+        <br>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Beneficios</mat-label>
+          <input matInput placeholder="Beneficios" formControlName="beneficios">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Metodos de pago</mat-label>
+            <input matInput placeholder="Metodo de pago" formControlName="metodos_de_pago">
+          </mat-form-field>
+        <br>
+
+      
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/membership">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+    <footer>
+      
+    </footer>
+</body>
+</html>

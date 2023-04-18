@@ -15,6 +15,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { SimulationCreaeditaComponent } from './component/simulation/simulation-creaedita/simulation-creaedita.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { MembershipCreaeditaComponent } from './component/membership/membership-creaedita/membership-creaedita.component';
+import { MembershipComponent } from './component/membership/membership.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,11 @@ import {MatInputModule} from '@angular/material/input';
     SimulationComponent,
     SimulationListarComponent,
     NavbarComponent,
-    SimulationCreaeditaComponent
+    SimulationCreaeditaComponent,
+    MembershipCreaeditaComponent,
+    MembershipComponent,
+  
+
   ],
   imports: [
     BrowserModule,
