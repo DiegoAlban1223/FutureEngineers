@@ -33,7 +33,8 @@ import { StudentsListarComponent } from './component/students/students-listar/st
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDatepickerModule}from '@angular/material/datepicker'
+import {MatDatepickerModule}from '@angular/material/datepicker';
+import { MenuComponent } from './components/menu/menu.component'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import {MatDatepickerModule}from '@angular/material/datepicker'
     SimulationCreaeditaComponent,
     StudentsComponent,
     StudentsListarComponent,
-    CreaeditaUsersComponent
+    CreaeditaUsersComponent,
   ],
   imports: [
     BrowserModule,
