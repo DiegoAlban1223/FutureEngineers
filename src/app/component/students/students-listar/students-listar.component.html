@@ -8,8 +8,14 @@
   <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container">
 
+      <div style="text-align: center;">
+        <h1>Estudiantes</h1>
+      </div>
+      <div style="text-align:end;">
+        <button mat-raised-button color="warn" routerLink="/students/new">Agregar</button>
+    </div>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 

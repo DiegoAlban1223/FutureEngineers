@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table'
 export class StudentsListarComponent implements OnInit {
 
   dataSource:MatTableDataSource<Students>=new MatTableDataSource();
-  displayedColumns:string[]=['id','colegio','edad','user_id','membresia','sala_id']
+  displayedColumns:string[]=['id','colegio','edad','membresia','sala_id']
   constructor(private sS:StudentsService) { }
 
   ngOnInit(): void {
