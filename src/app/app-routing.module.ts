@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SimulationComponent } from './component/simulation/simulation.component';
 import { SimulationCreaeditaComponent } from './component/simulation/simulation-creaedita/simulation-creaedita.component';
+import { StudentsComponent } from './component/students/students.component';
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
@@ -10,7 +11,11 @@ const routes: Routes = [
   {
     path:'new', component:SimulationCreaeditaComponent
   }
-]}
+]},
+
+{path: 'students', component:StudentsComponent
+
+}
 ];
 
 

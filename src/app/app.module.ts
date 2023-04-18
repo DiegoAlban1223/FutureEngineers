@@ -5,8 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ListStudentComponent } from './components/list-student/list-student.component';
-import { AddStudentComponent } from './components/add-student/add-student.component';
 // import { ChatsComponent } from './services/chats/chats.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatsComponent } from './components/chats/chats.component';
@@ -35,11 +33,8 @@ import { StudentsListarComponent } from './component/students/students-listar/st
 @NgModule({
   declarations: [
     AppComponent,
-    ListStudentComponent,
-    AddStudentComponent,
     ChatsComponent,
     ListChatsComponent,
-    ListStudentComponent,
     UsersComponent,
     ListUsersComponent,
     ////////////ListChatsComponent,
@@ -57,7 +52,9 @@ import { StudentsListarComponent } from './component/students/students-listar/st
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   exports: [
     MatTableModule,
