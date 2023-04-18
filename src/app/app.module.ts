@@ -30,7 +30,10 @@ import {MatInputModule} from '@angular/material/input';
 
 import { StudentsComponent } from './component/students/students.component';
 import { StudentsListarComponent } from './component/students/students-listar/students-listar.component';
-
+import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule}from '@angular/material/datepicker'
 
 @NgModule({
   declarations: [
@@ -50,14 +53,21 @@ import { StudentsListarComponent } from './component/students/students-listar/st
     NavbarComponent,
     SimulationCreaeditaComponent,
     StudentsComponent,
-    StudentsListarComponent
+    StudentsListarComponent,
+    CreaeditaUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
   ],
   exports: [
     MatTableModule,

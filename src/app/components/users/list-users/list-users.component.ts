@@ -19,5 +19,8 @@ export class ListUsersComponent implements OnInit {
     this.as.list().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
     })
-  }
+    this.as.getList().subscribe(data=>{
+      this.dataSource= new MatTableDataSource(data);
+  })
+}
 }

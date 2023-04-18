@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { SimulationComponent } from './component/simulation/simulation.component';
 import { SimulationCreaeditaComponent } from './component/simulation/simulation-creaedita/simulation-creaedita.component';
+import { UsersComponent } from './components/users/users.component';
+import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 
 const routes: Routes = [
-  {path: 'simulations', component:SimulationComponent, children:
+  {path: 'users', component:UsersComponent, children:
 [
   {
-    path:'new', component:SimulationCreaeditaComponent
+    path:'new', component:CreaeditaUsersComponent
   }
 ]}
 ];
