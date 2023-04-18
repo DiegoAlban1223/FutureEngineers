@@ -29,7 +29,40 @@ module.exports = function () {
         fecha_envio: "2023-04-12T17:32:12.000Z",
         fecha_recepcion: "2023-04-12T17:32:13.000Z",
 	    }
-    ]
+    ],students:[
+      {
+          id:1,
+          colegio: "Bertolt Brecht",
+          edad: "17",
+          users_user_id: " ",
+          membresia_id: " ",
+          sala_id: " ",
+      },
+      {
+          id:2,
+          colegio: "Bertolt Brecht",
+          edad: "17",
+          users_user_id: " ",
+          membresia_id: " ",
+          sala_id: " ",
+      },
+      {
+          id:3,
+          colegio: "Bertolt Brecht",
+          edad: "17",
+          users_user_id: " ",
+          membresia_id: " ",
+          sala_id: " ",
+      },
+      {
+          id:4,
+          colegio: "Bertolt Brecht",
+          edad: "17",
+          users_user_id: " ",
+          membresia_id: " ",
+          sala_id: " ",
+      },
+  ]
   }
   return data
 }
