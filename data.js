@@ -128,6 +128,37 @@ module.exports = function () {
         metodo_de_pago: "efectivo",
       },
     ],
+    Users: [
+      {
+        id: 1,
+        rol: "Tutor",
+        nombre_completo: "Luis Miguel Fernando Morote",
+        correo_electronico: "FernandoM@gmail.com",
+        Contrasena: "2ekfwfj",
+      },
+      {
+        id: 2,
+        rol: "Tutor",
+        nombre_completo: "Maria Montenegro Rosal",
+        correo_electronico: "MontenegroR@gmail.com",
+        Contrasena: "adffw223j",
+      },
+      {
+        id: 3,
+        rol: "Estudiante",
+        nombre_completo: "Manuel Robreto Rodriguez",
+        correo_electronico: "RobertoR@gmail.com",
+        Contrasena: "ldkfsl",
+      },
+      {
+        id: 4,
+        rol: "Estudiante",
+        nombre_completo: "Allison Jimenez Zorrilla",
+        correo_electronico: "Jimenez@gmail.com",
+        Contrasena: "34xerw",
+      },
+
+    ],
   };
   return data;
 };

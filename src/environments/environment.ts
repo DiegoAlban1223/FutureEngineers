@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   base: "http://localhost:5000"
-
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
