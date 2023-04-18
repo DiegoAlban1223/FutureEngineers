@@ -1,4 +1,4 @@
-module.module.exports = function () {
+module.exports = function () {
   var data = {
     Chats: [
       {
