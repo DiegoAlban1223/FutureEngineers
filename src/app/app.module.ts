@@ -25,9 +25,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { SimulationCreaeditaComponent } from './component/simulation/simulation-creaedita/simulation-creaedita.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-
+//import {MatFormFieldModule} from '@angular/material';
 import { StudentsComponent } from './component/students/students.component';
 import { StudentsListarComponent } from './component/students/students-listar/students-listar.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -54,7 +55,11 @@ import { StudentsListarComponent } from './component/students/students-listar/st
     BrowserAnimationsModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   exports: [
     MatTableModule,
@@ -63,7 +68,8 @@ import { StudentsListarComponent } from './component/students/students-listar/st
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
