@@ -13,8 +13,13 @@ import { ListChatsComponent } from './components/chats/list-chats/list-chats.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddChatsComponent } from './components/chats/add-chats/add-chats.component';
+
+import { MatInputModule } from '@angular/material/input'
+import{MatDatepickerModule} from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { AddChatsComponent } from './components/chats/add-chats/add-chats.compon
     BrowserAnimationsModule,
     MatTableModule,
     ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
