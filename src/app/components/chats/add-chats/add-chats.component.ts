@@ -15,6 +15,7 @@ export class AddChatsComponent implements OnInit {
   chats: Chats = new Chats();
   mensaje:string = "";
   maxFecha: Date = moment().add(-1, 'days').toDate();
+  //maxFecha = new Date();
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -29,11 +30,14 @@ export class AddChatsComponent implements OnInit {
   constructor(private aS: ChatsService, private router: Router) { }
 
   aceptar():void{
+    const now = moment();
     this.chats.id=this.form.value['id'];
     this.chats.mensaje_estudiante=this.form.value['mensaje_estudiante'];
     this.chats.mensaje_tutor = this.form.value['mensaje_tutor'];
-    this.chats.fecha_envio = this.form.value['fecha_envio'];
-    this.chats.fecha_recepcion = this.form.value['fecha_recepcion'];
+    //this.chats.fecha_envio = this.form.value['fecha_envio'];
+    this.chats.fecha_envio = moment().toDate();
+    //this.chats.fecha_recepcion = this.form.value['fecha_recepcion'];
+    this.chats.fecha_recepcion = moment().toDate();
     if(this.form.value['mensaje_estudiante'].length > 0 && this.form.value['mensaje_tutor']){
       this.aS.insert(this.chats).subscribe(data =>{
         this.aS.list().subscribe(data=>{
