@@ -7,7 +7,25 @@
     <title>Document</title>
   </head>
   <body>
-    <div>
+    <div class="container">
+      <mat-toolbar color="primary">
+        <span>Chats</span>
+        <span class="spacer"></span>
+        <button mat-button routerLink="/chats/new">Agregar</button>
+        <button mat-button routerLink="/chats">Listar</button>
+      </mat-toolbar>
+      <br>
+
+      <div style="text-align: center;">
+        <h1>Lista de Mensajes</h1>
+      </div>
+
+
+
+      <div style="text-align: right;">
+
+        <button mat-raised-button color="warn" routerLink="/chats/new"> Agregar</button>
+       </div> <!--BOTON PARA LLEVAR A CREA EDITA CHAT -->
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!--- Note that these columns can be defined in any order.
 
@@ -43,7 +61,7 @@
           <th mat-header-cell *matHeaderCellDef>fecha_envio</th>
 
           <td mat-cell *matCellDef="let element">
-            {{ element.fecha_envio}}
+            {{ element.fecha_envio|date:'hh:mm:ss a'}}
           </td>
         </ng-container>
 
@@ -51,7 +69,7 @@
           <th mat-header-cell *matHeaderCellDef>fecha_recepcion</th>
 
           <td mat-cell *matCellDef="let element">
-            {{ element.fecha_recepcion}}
+            {{ element.fecha_recepcion|date:'hh:mm:ss a'}}
           </td>
         </ng-container>
 
