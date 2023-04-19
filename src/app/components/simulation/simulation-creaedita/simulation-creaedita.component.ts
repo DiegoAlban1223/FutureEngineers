@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Simulations } from 'src/app/model/simulations';
-import { SimulationsService } from 'src/app/service/simulations.service';
-import {Router} from '@angular/router';
+import { SimulationsService } from 'src/app/services/simulations.service';
 
 @Component({
   selector: 'app-simulation-creaedita',
@@ -14,8 +14,9 @@ export class SimulationCreaeditaComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   simulation: Simulations = new Simulations();
   mensaje: string = "";
- 
-  constructor(private aS:SimulationsService, private router:Router) { }
+
+  constructor(private aS:SimulationsService, 
+    private router: Router) { }
 
   ngOnInit(): void {
     this.form=new FormGroup({
@@ -47,4 +48,5 @@ export class SimulationCreaeditaComponent implements OnInit {
       this.mensaje="Ingrese los datos del autor!!"
     }
   }
+  
 }
