@@ -16,9 +16,9 @@ import { AddChatsComponent } from './components/chats/add-chats/add-chats.compon
 
 // ];
 
-import { NavbarComponent } from './component/navbar/navbar.component';
-import { SimulationComponent } from './component/simulation/simulation.component';
-import { SimulationCreaeditaComponent } from './component/simulation/simulation-creaedita/simulation-creaedita.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SimulationComponent } from './components/simulation/simulation.component';
+import { SimulationCreaeditaComponent } from './components/simulation/simulation-creaedita/simulation-creaedita.component';
 
 const routes: Routes = [
   {
