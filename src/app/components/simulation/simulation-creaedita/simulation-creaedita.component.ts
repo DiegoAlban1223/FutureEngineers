@@ -15,12 +15,12 @@ export class SimulationCreaeditaComponent implements OnInit {
   simulation: Simulations = new Simulations();
   mensaje: string = "";
 
-  constructor(private aS:SimulationsService, 
+  constructor(private aS: SimulationsService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.form=new FormGroup({
-      id:new FormControl(),
+    this.form = new FormGroup({
+      id: new FormControl(),
       nameCurso: new FormControl(),
       planCurso: new FormControl(),
       metodologiaCurso: new FormControl(),
@@ -28,25 +28,26 @@ export class SimulationCreaeditaComponent implements OnInit {
     })
   }
 
-  aceptar():void{
-    this.simulation.id=this.form.value['id'];
-    this.simulation.nameCurso=this.form.value['nameCurso'];
-    this.simulation.planCurso=this.form.value['planCurso'];
-    this.simulation.metodologiaCurso=this.form.value['metodologiaCurso'];
-    this.simulation.duracionHoras=this.form.value['duracionHoras'];
+  aceptar(): void {
+    this.simulation.id = this.form.value['id'];
+    this.simulation.nameCurso = this.form.value['nameCurso'];
+    this.simulation.planCurso = this.form.value['planCurso'];
+    this.simulation.metodologiaCurso = this.form.value['metodologiaCurso'];
+    this.simulation.duracionHoras = this.form.value['duracionHoras'];
 
-    if(this.form.value['nameCurso'].length>0 && this.form.value['planCurso'].length>0
-    && this.form.value['metodologiaCurso'].length>0 && this.form.value['duracionHoras']>0 ){
-      this.aS.insert(this.simulation).subscribe(data=>{
-        this.aS.list().subscribe(data=>{
-          this.aS.setList(data)})
-    })
+    if (this.form.value['nameCurso'].length > 0 && this.form.value['planCurso'].length > 0
+      && this.form.value['metodologiaCurso'].length > 0 && this.form.value['duracionHoras'].length > 0) {
+      this.aS.insert(this.simulation).subscribe(data => {
+        this.aS.list().subscribe(data => {
+          this.aS.setList(data)
+        })
+      })
 
-    this.router.navigate(['simulations']);
+      this.router.navigate(['simulations']);
 
-    } else{
-      this.mensaje="Ingrese los datos del autor!!"
+    } else {
+      this.mensaje = "Ingrese los datos de la simulación!!"
     }
   }
-  
+
 }
