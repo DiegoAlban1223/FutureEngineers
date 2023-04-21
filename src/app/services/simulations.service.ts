@@ -31,4 +31,13 @@ export class SimulationsService {
   getList(){
     return this.listaCambio.asObservable();
   }
+
+  //modificar put
+  listId(id: number) {
+    return this.http.get<Simulations>(`${this.url}/${id}`);
+  }
+
+  update(s: Simulations) {
+    return this.http.put(this.url + "/" + s.id, s);
+  }
 }

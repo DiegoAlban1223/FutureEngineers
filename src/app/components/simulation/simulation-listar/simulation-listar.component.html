@@ -16,7 +16,10 @@
             <button mat-raised-button color="warn" routerLink="/simulations/new">Agregar</button>
         </div>
         <br>
-
+        <!-- FILTRAR -->
+        <mat-form-field>
+            <input matInput (keyup)="filtrar($event)" placeholder="Buscar simulación">
+        </mat-form-field> 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <!-- en los "" va el nombre de displaycolumns [] 
@@ -46,6 +49,16 @@
             <ng-container matColumnDef="duracionC">
                 <th mat-header-cell *matHeaderCellDef> Duración </th>
                 <td mat-cell *matCellDef="let element"> {{element.duracionHoras}} </td>
+            </ng-container>
+
+            <!-- MODIFICAR -->
+            <ng-container matColumnDef="accions">
+                <th mat-header-cell *matHeaderCellDef> Aciones </th>
+                <td mat-cell *matCellDef="let element"> 
+                <button mat-raised-button color="warn" [routerLink]="['edicion', element.id]"> 
+                    Actualizar 
+                </button>    
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

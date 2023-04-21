@@ -9,6 +9,9 @@ const routes: Routes = [
 [
   {
     path:'new', component:SimulationCreaeditaComponent
+  },
+  {
+    path:'edicion/:id', component:SimulationCreaeditaComponent
   }
 ]}
 ];
