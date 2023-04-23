@@ -5,11 +5,10 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
-
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public route:ActivatedRoute) { }
+  constructor(public router:ActivatedRoute) { }
 
   ngOnInit(): void {
   }

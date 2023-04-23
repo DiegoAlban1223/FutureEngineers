@@ -1,32 +1,34 @@
-import { Simulations } from './../model/simulations';
-import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs'; //lista cambio 
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-const base_url = environment.base
+import { Simulations } from '../model/simulations';
+import { HttpClient } from '@angular/common/http';
+
+const base_url= environment.base
 
 @Injectable({
   providedIn: 'root'
 })
 export class SimulationsService {
 
-  private url = `${base_url}/simulations`
-  private listaCambio = new Subject<Simulations[]>(); // se usa para 
+  private url=`${base_url}/simulations`
+  private listaCambio= new Subject<Simulations[]>();
 
   constructor(private http: HttpClient) { }
-  list() {
+
+  list(){
     return this.http.get<Simulations[]>(this.url);
   }
 
   insert(simulation:Simulations){
     return this.http.post(this.url, simulation);
   }
-  
-  setList(ListaNueva: Simulations[]) {
-    this.listaCambio.next(ListaNueva)
+
+  setList(ListaNueva: Simulations[]){
+    this.listaCambio.next(ListaNueva);
   }
 
-  getList() {
+  getList(){
     return this.listaCambio.asObservable();
   }
 }
