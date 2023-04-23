@@ -11,7 +11,7 @@ import { SimulationsService } from 'src/app/services/simulations.service';
 export class SimulationListarComponent implements OnInit {
 
   dataSource: MatTableDataSource<Simulations> = new MatTableDataSource();
-  displayedColumns: string[] = ['codigoC', 'nombreC', 'planC', 'metodologiaC', 'duracionC']
+  displayedColumns: string[] = ['codigoC', 'nombreC', 'planC', 'metodologiaC', 'duracionC', 'accions']
 
   constructor(private as: SimulationsService) { }
 
@@ -26,4 +26,7 @@ export class SimulationListarComponent implements OnInit {
     })
   }
 
+  filtrar(z: any) {
+    this.dataSource.filter = z.target.value.trim();
+  }
 }
