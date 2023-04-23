@@ -15,14 +15,21 @@ import {MatIconModule} from '@angular/material/icon';
 import { SimulationCreaeditaComponent } from './components/simulation/simulation-creaedita/simulation-creaedita.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-
+import { StudentComponent } from './components/student/student.component';
+import { StudentListarComponent } from './components/student/student-listar/student-listar.component';
+import { StudentCreaeditaComponent } from './components/student/student-creaedita/student-creaedita.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
     SimulationComponent,
     SimulationListarComponent,
     NavbarComponent,
-    SimulationCreaeditaComponent
+    SimulationCreaeditaComponent,
+    StudentComponent,
+    StudentListarComponent,
+    StudentCreaeditaComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,9 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
