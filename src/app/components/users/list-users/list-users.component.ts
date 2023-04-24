@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class ListUsersComponent implements OnInit {
   dataSource:MatTableDataSource<Users>=new MatTableDataSource();//creo q  no se instalo bien el angular material
 
-  displayedColumns:String[]=['Codigo','rol','nombre_completo','correo_electronico','contrasena']
+  displayedColumns:String[]=['Codigo','rol','nombre_completo','correo_electronico','contrasena','editar']
   constructor(private as:UsersService) { }
 
   ngOnInit(): void {
@@ -22,5 +22,8 @@ export class ListUsersComponent implements OnInit {
     this.as.getList().subscribe(data=>{
       this.dataSource= new MatTableDataSource(data);
   })
+}
+filtrar(z:any){
+  this.dataSource.filter = z.target.value.trim();
 }
 }

@@ -26,5 +26,10 @@ export class UsersService {
   getList(){
     return this.listaCambio.asObservable();
   }
-
+  listId(id : number){
+    return this.http.get<Users>(`${this.url}/${id}`);
+  }
+  update(a: Users){
+    return this.http.put(this.url+"/"+a.id, a);
+  }
 }
