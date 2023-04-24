@@ -6,6 +6,8 @@ import { SimulationCreaeditaComponent } from './components/simulation/simulation
 import { StudentComponent } from './components/student/student.component';
 import { StudentCreaeditaComponent } from './components/student/student-creaedita/student-creaedita.component';
 import { StudentListarComponent } from './components/student/student-listar/student-listar.component';
+import { UsersComponent } from './components/users/users.component';
+import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
@@ -24,6 +26,16 @@ const routes: Routes = [
     },
     {
       path:'edicion/:id',component:StudentCreaeditaComponent
+    }
+  ]
+  },
+  {path: 'users', component:UsersComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaUsersComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaUsersComponent
     }
   ]
   }
