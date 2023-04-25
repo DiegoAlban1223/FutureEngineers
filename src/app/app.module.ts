@@ -23,6 +23,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { UsersComponent } from './components/users/users.component';
 import { ListUsersComponent } from './components/users/list-users/list-users.component';
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
+import { ChatsComponent } from './components/chats/chats.component';
+import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { CreaeditaUsersComponent } from './components/users/creaedita-users/crea
     StudentCreaeditaComponent,
     UsersComponent,
     ListUsersComponent,
-    CreaeditaUsersComponent
+    CreaeditaUsersComponent,
+    ChatsComponent,
+    ListChatsComponent
   ],
   imports: [
     BrowserModule,

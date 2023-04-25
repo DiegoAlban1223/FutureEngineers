@@ -8,7 +8,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class ChatsService {
-  private url = `${base_url}/Chats`;
+  private url = `${base_url}/chats`;
   constructor(private http:HttpClient) {}
 
   list(){

@@ -15,8 +15,14 @@ export class StudentListarComponent implements OnInit {
 
   ngOnInit(): void {
     this.sS.list().subscribe(data=>{
-      this.dataSource = new MatTableDataSource(data);
+      this.dataSource=new MatTableDataSource(data);
     })
-  }
-
+    this.sS.getList().subscribe(data=>{
+      this.dataSource= new MatTableDataSource(data);
+  })
 }
+filtrar(z:any){
+  this.dataSource.filter = z.target.value.trim();
+}
+}
+

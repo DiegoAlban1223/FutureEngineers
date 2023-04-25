@@ -8,6 +8,7 @@ import { StudentCreaeditaComponent } from './components/student/student-creaedit
 import { StudentListarComponent } from './components/student/student-listar/student-listar.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
+import { ChatsComponent } from './components/chats/chats.component';
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
@@ -18,7 +19,7 @@ const routes: Routes = [
   {
     path:'edicion/:id', component:SimulationCreaeditaComponent
   }
-]},
+  ]},
   {path: 'students', component:StudentComponent, children:
   [
     {
@@ -27,8 +28,7 @@ const routes: Routes = [
     {
       path:'edicion/:id',component:StudentCreaeditaComponent
     }
-  ]
-  },
+  ]},
   {path: 'users', component:UsersComponent, children:
   [
     {
@@ -38,6 +38,9 @@ const routes: Routes = [
       path:'edicion/:id',component:CreaeditaUsersComponent
     }
   ]
+  },
+  {path: 'chats', component:ChatsComponent
+
   }
 ];
 

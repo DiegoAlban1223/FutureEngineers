@@ -1,6 +1,6 @@
 module.exports=function(){
     var data={
-      Chats: [
+      chats: [
         {
           id: 1,
           mensaje_estudiante: "buenas tardes profesora",
@@ -30,7 +30,7 @@ module.exports=function(){
           fecha_recepcion: "2023-04-12T17:32:13.000Z",
         },
       ],
-    Users: [
+    users: [
       {
         id: 1,
         rol: "Tutor",
@@ -60,7 +60,7 @@ module.exports=function(){
         Contrasena: "34xerw",
       },
     ],
-    Memberships: [
+    memberships: [
       {
         id: 1,
         monto_pago: 50,

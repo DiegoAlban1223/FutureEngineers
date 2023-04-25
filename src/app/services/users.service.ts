@@ -9,7 +9,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class UsersService {
-  private url = `${base_url}/Users`;
+  private url = `${base_url}/users`;
 
   private listaCambio = new Subject<Users[]>()
   constructor(private http:HttpClient) {}

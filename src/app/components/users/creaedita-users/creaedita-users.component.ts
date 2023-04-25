@@ -30,11 +30,18 @@ export class CreaeditaUsersComponent implements OnInit {
       correo_electronico: new FormControl(),
       contrasena: new FormControl()
     })
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();  //traer el componente de abajo
+    })
   }
 
   constructor(private as:UsersService,
     private router:Router,
     private route:ActivatedRoute) { }
+
+
 
   aceptar():void{
     this.user.id=this.from.value['id'];
@@ -58,7 +65,7 @@ export class CreaeditaUsersComponent implements OnInit {
       this.router.navigate(['users']);
     }
     else{
-      this.mensaje = "Ingrese los datos del author!!"
+      this.mensaje = "Ingrese los datos del usurio!!"
     }
   }
   init(){
