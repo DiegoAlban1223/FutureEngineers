@@ -19,11 +19,11 @@
         <!-- FILTRAR -->
         <mat-form-field>
             <input matInput (keyup)="filtrar($event)" placeholder="Buscar simulación">
-        </mat-form-field> 
-        
+        </mat-form-field>
+
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <!-- en los "" va el nombre de displaycolumns [] 
+            <!-- en los "" va el nombre de displaycolumns []
             en elements. pego lo del author.ts de model
             -->
 
@@ -55,20 +55,20 @@
             <!-- MODIFICAR -->
             <ng-container matColumnDef="accions1">
                 <th mat-header-cell *matHeaderCellDef> Aciones </th>
-                <td mat-cell *matCellDef="let element"> 
-                <button mat-raised-button color="warn" [routerLink]="['edicion', element.id]"> 
-                    Actualizar 
-                </button>    
+                <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="primary" [routerLink]="['edicion', element.id]">
+                    <mat-icon>edit</mat-icon>
+                </button>
                 </td>
             </ng-container>
 
             <ng-container matColumnDef="accions2">
                 <th mat-header-cell *matHeaderCellDef> Acciones </th>
                 <td mat-cell *matCellDef="let element">
-                  <button mat-raised-button color="accent" (click)="confirm(element.id)"><span class="material-icons">Eliminar</span></button>
+                  <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
                 </td>
             </ng-container>
-        
+
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

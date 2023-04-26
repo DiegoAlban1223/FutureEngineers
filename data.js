@@ -91,7 +91,7 @@ module.exports=function(){
                 id:1,
                 nameCurso: "Matematica Básica",
                 planCurso: "El curso consta de 2 exámenes que deberán ser aprobatorios con 100%",
-                metodologiaCurso: "Al ser un curso de la facultad de Ingeniería, empezaremos por ver los primeros 4 videos dentro de esta canal: https://www.youtube.com/@MatematicaBasicaBlended/featured ",
+                metodologiaCurso: "Al ser un curso de la facultad de Ingeniería",
                 duracionHoras: "6",
             },
             {
