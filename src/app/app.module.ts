@@ -27,7 +27,14 @@ import { ChatsComponent } from './components/chats/chats.component';
 import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
 import { DialogoUsersComponent } from './components/users/list-users/dialogo-users/dialogo-users.component';
 import { SimulationDialogoComponent } from './components/simulation/simulation-listar/simulation-dialogo/simulation-dialogo.component';
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MembershipsComponent } from './components/memberships/memberships.component';
+import { ListMembershipsComponent } from './components/memberships/list-memberships/list-memberships.component';
+import { CreaeditaMembershipsComponent } from './components/memberships/creaedita-memberships/creaedita-memberships.component';
+import { DialogoMembershipsComponent } from './components/memberships/list-memberships/dialogo-memberships/dialogo-memberships.component';
+import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/creaedita-chats.component';
+import { DialogoChatsComponent } from './components/chats/list-chats/dialogo-chats/dialogo-chats.component';
+import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
 
 
 @NgModule({
@@ -46,7 +53,15 @@ import { MatDialogModule } from '@angular/material/dialog'
     ChatsComponent,
     ListChatsComponent,
     DialogoUsersComponent,
-    SimulationDialogoComponent
+    SimulationDialogoComponent,
+    MembershipsComponent,
+    ListMembershipsComponent,
+    CreaeditaMembershipsComponent,
+    DialogoMembershipsComponent,
+    CreaeditaChatsComponent,
+    DialogoChatsComponent,
+    StudentDialogoComponent,
+
   ],
   imports: [
     BrowserModule,

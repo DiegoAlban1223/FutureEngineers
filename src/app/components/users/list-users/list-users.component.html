@@ -15,11 +15,11 @@
       <h1>Lista de Usuarios</h1>
   </div>
   <div style="text-align:end;">
-       <button mat-raised-button color="warn" routerLink="/users/new">Agregar</button>
+       <button mat-raised-button color="primary" routerLink="/users/new">Agregar</button>
   </div>
 
   <mat-form-field>
-    <input matInput (keyup)="filtrar($event)" placeholder="Filtrar">
+    <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
     </mat-form-field>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

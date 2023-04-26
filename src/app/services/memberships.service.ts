@@ -1,26 +1,30 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Students } from '../model/student';
-import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Memberships } from '../model/memberships';
+import { HttpClient } from '@angular/common/http';
+
+const base_url= environment.base
+
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
-  private url = `${environment.base}/students`
-  private listaCambio= new Subject<Students[]>();
+export class MembershipsService {
+
+  private url=`${base_url}/memberships`
+  private listaCambio= new Subject<Memberships[]>();
   private confirmarEliminacion = new Subject<Boolean>()
-  
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
+
   list(){
-    return this.http.get<Students[]>(this.url);
+    return this.http.get<Memberships[]>(this.url);
   }
 
-  insert(student:Students){
-    return this.http.post(this.url, student)
+  insert(simulation:Memberships){
+    return this.http.post(this.url, simulation);
   }
 
-  setList(ListaNueva: Students[]){
+  setList(ListaNueva: Memberships[]){
     this.listaCambio.next(ListaNueva);
   }
 
@@ -30,13 +34,13 @@ export class StudentService {
 
   //modificar put
   listId(id: number) {
-    return this.http.get<Students>(`${this.url}/${id}`);
+    return this.http.get<Memberships>(`${this.url}/${id}`);
   }
 
-  update(s: Students) {
+  update(s: Memberships) {
     return this.http.put(this.url + "/" + s.id, s);
   }
-
+  
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)
   }
@@ -47,4 +51,5 @@ export class StudentService {
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
   }
+
 }

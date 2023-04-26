@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Memberships } from 'src/app/model/memberships';
 import { MatTableDataSource } from '@angular/material/table';
-import { Simulations } from 'src/app/model/simulations';
 import { MatDialog } from '@angular/material/dialog'
-import { SimulationDialogoComponent } from './simulation-dialogo/simulation-dialogo.component';
-import { SimulationsService } from 'src/app/services/simulations.service';
+import { MembershipsService } from 'src/app/services/memberships.service';
+import { DialogoMembershipsComponent } from './dialogo-memberships/dialogo-memberships.component';
 
 @Component({
-  selector: 'app-simulation-listar',
-  templateUrl: './simulation-listar.component.html',
-  styleUrls: ['./simulation-listar.component.css']
+  selector: 'app-list-memberships',
+  templateUrl: './list-memberships.component.html',
+  styleUrls: ['./list-memberships.component.css']
 })
-export class SimulationListarComponent implements OnInit {
+export class ListMembershipsComponent implements OnInit {
 
-  lista: Simulations[] = []
-  dataSource: MatTableDataSource<Simulations> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nombreC', 'planC', 'metodologiaC', 'duracionC', 'accions1', 'accions2']
-  //eliminar
-  idMayor: number = 0
-  constructor(private as: SimulationsService, private dialog: MatDialog) { }
+  idMayor: number=0
+  lista: Memberships[] = []
+  dataSource: MatTableDataSource<Memberships> = new MatTableDataSource();
+  displayedColumns: string[] = ['id', 'montoPago', 'beneficios', 'metodoPago', 'accions1', 'accions2']
+  constructor(private as: MembershipsService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
-
     this.as.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     })
@@ -37,7 +35,7 @@ export class SimulationListarComponent implements OnInit {
 
   confirm(id: number) {
     this.idMayor = id;
-    this.dialog.open(SimulationDialogoComponent);
+    this.dialog.open(DialogoMembershipsComponent);
   }
 
   eliminar(id: number) {

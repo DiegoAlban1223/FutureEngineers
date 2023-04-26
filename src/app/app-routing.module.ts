@@ -9,6 +9,9 @@ import { StudentListarComponent } from './components/student/student-listar/stud
 import { UsersComponent } from './components/users/users.component';
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 import { ChatsComponent } from './components/chats/chats.component';
+import { MembershipsComponent } from './components/memberships/memberships.component';
+import { CreaeditaMembershipsComponent } from './components/memberships/creaedita-memberships/creaedita-memberships.component';
+import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/creaedita-chats.component';
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
@@ -18,6 +21,16 @@ const routes: Routes = [
   },
   {
     path:'edicion/:id', component:SimulationCreaeditaComponent
+  }
+  ]},
+
+  {path: 'memberships', component:MembershipsComponent, children:
+  [
+  {
+    path:'new', component:CreaeditaMembershipsComponent
+  },
+  {
+    path:'edicion/:id', component:CreaeditaMembershipsComponent
   }
   ]},
   {path: 'students', component:StudentComponent, children:
@@ -39,9 +52,18 @@ const routes: Routes = [
     }
   ]
   },
-  {path: 'chats', component:ChatsComponent
 
-  }
+  {path: 'chats', component:ChatsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaChatsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaChatsComponent
+    }
+  ]
+  },
+
 ]
 
 

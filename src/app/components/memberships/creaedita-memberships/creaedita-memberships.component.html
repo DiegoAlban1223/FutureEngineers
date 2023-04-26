@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Simulación</title>
+    <title>Registro Membresía</title>
 </head>
 <body>
     <div class="container">
         <div style="text-align: center;" >
-        <h1>Registro de Simulaciones</h1>
+        <h1>Registro de Membresía</h1>
         </div>
       <form [formGroup]="form" (submit)="aceptar()">
         
@@ -21,31 +21,26 @@
         <br>
   
         <mat-form-field class="example-full-width">
-          <mat-label>Curso</mat-label>
-          <input matInput placeholder="Curso" formControlName="nameCurso">
+          <mat-label>Monto de Pago</mat-label>
+          <input matInput placeholder="100" formControlName="monto_pago">
         </mat-form-field>
         <br>
   
         <mat-form-field class="example-full-width">
-          <mat-label>Plan del Curso</mat-label>
-          <input matInput placeholder="Plan Curso" formControlName="planCurso">
+          <mat-label>Beneficios</mat-label>
+          <input matInput placeholder="Plan Curso" formControlName="beneficios">
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
-            <mat-label>Metodología del Curso</mat-label>
-            <input matInput placeholder="Metodologia Curso" formControlName="metodologiaCurso">
+            <mat-label>Método de Pago</mat-label>
+            <input matInput placeholder="Tarjeta" formControlName="metodo_de_pago">
           </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Duración del Curso</mat-label>
-            <input matInput placeholder="Duracion en horas" formControlName="duracionHoras">
-          </mat-form-field>
-        <br>
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
-            <button mat-raised-button color="warn" routerLink="/simulations">Cancelar</button>
+            <button mat-raised-button color="warn" routerLink="/memberships">Cancelar</button>
             </div>
         <p>{{mensaje}}</p>
       </form>
