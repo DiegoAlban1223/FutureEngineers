@@ -16,7 +16,7 @@ export class ListUsersComponent implements OnInit {
   lista: Users[] = []
   dataSource:MatTableDataSource<Users>=new MatTableDataSource();//creo q  no se instalo bien el angular material
   idMayor: number = 0
-  displayedColumns:String[]=['Codigo','rol','nombre_completo','correo_electronico','contrasena','editar', 'eliminar']
+  displayedColumns:String[]=['codigo','rol','nombre_completo','correo_electronico','editar', 'eliminar']
 
   constructor(private as:UsersService, private dialog: MatDialog) { }
 

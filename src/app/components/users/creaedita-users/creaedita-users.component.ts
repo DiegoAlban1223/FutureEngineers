@@ -14,16 +14,20 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class CreaeditaUsersComponent implements OnInit {
 
-  id: number = 0
-  edicion: boolean=false
 
-  from:FormGroup= new FormGroup({});
+  form:FormGroup= new FormGroup({});
   user:Users= new Users();
   mensaje:string="";
+  id: number = 0;
+  edicion: boolean=false;
 
+
+  constructor(private as:UsersService,
+    private router:Router,
+    private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.from = new FormGroup({
+    this.form = new FormGroup({
       id: new FormControl(),
       rol: new FormControl(),
       nombre_completo: new FormControl(),
@@ -37,20 +41,16 @@ export class CreaeditaUsersComponent implements OnInit {
     })
   }
 
-  constructor(private as:UsersService,
-    private router:Router,
-    private route:ActivatedRoute) { }
-
 
 
   aceptar():void{
-    this.user.id=this.from.value['id'];
-    this.user.rol=this.from.value['rol'];
-    this.user.nombre_completo=this.from.value['nombre_completo'];
-    this.user.correo_electronico=this.from.value['correo_electronico'];
-    this.user.contrasena=this.from.value['contrasena'];
+    this.user.id=this.form.value['id'];
+    this.user.rol=this.form.value['rol'];
+    this.user.nombre_completo=this.form.value['nombre_completo'];
+    this.user.correo_electronico=this.form.value['correo_electronico'];
+    this.user.contrasena=this.form.value['contrasena'];
 
-    if(this.from.value['nombre_completo'].length > 0 && this.from.value['correo_electronico'].length > 0){
+    if(this.form.value['nombre_completo'].length > 0 && this.form.value['correo_electronico'].length > 0){
       if(this.edicion){
         this.as.update(this.user).subscribe(()=>{
           this.as.list().subscribe(data=>{
@@ -58,7 +58,7 @@ export class CreaeditaUsersComponent implements OnInit {
         })
       }
       else{
-            +this.as.insert(this.user).subscribe(data=>{
+            this.as.insert(this.user).subscribe(data=>{
               this.as.list().subscribe(data=>{
                 this.as.setList(data)})})
       }
@@ -72,7 +72,7 @@ export class CreaeditaUsersComponent implements OnInit {
 
     if(this.edicion){
       this.as.listId(this.id).subscribe(data=>{
-          this.from = new FormGroup({
+          this.form = new FormGroup({
             id: new FormControl(data.id),
             rol: new  FormControl(data.rol),
             nombre_completo: new FormControl(data.nombre_completo),
