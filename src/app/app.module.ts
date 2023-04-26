@@ -26,10 +26,9 @@ import { CreaeditaUsersComponent } from './components/users/creaedita-users/crea
 import { ChatsComponent } from './components/chats/chats.component';
 import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
 import { DialogoUsersComponent } from './components/users/list-users/dialogo-users/dialogo-users.component';
-
 import { SimulationDialogoComponent } from './components/simulation/simulation-listar/simulation-dialogo/simulation-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog'
-+
+
 
 @NgModule({
   declarations: [
