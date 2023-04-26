@@ -12,7 +12,7 @@ import { ChatsComponent } from './components/chats/chats.component';
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
-[
+  [
   {
     path:'new', component:SimulationCreaeditaComponent
   },
@@ -42,7 +42,7 @@ const routes: Routes = [
   {path: 'chats', component:ChatsComponent
 
   }
-];
+]
 
 
 @NgModule({
