@@ -6,14 +6,14 @@ import { SimulationCreaeditaComponent } from './components/simulation/simulation
 
 const routes: Routes = [
   {path: 'simulations', component:SimulationComponent, children:
-[
+  [
   {
     path:'new', component:SimulationCreaeditaComponent
   },
   {
     path:'edicion/:id', component:SimulationCreaeditaComponent
   }
-]}
+  ]}
 ];
 
 

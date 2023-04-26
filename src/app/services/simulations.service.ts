@@ -13,6 +13,7 @@ export class SimulationsService {
 
   private url=`${base_url}/simulations`
   private listaCambio= new Subject<Simulations[]>();
+  private confirmarEliminacion = new Subject<Boolean>()
 
   constructor(private http: HttpClient) { }
 
@@ -39,5 +40,16 @@ export class SimulationsService {
 
   update(s: Simulations) {
     return this.http.put(this.url + "/" + s.id, s);
+  }
+  
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
+
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
   }
 }
