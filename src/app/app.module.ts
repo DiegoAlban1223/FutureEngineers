@@ -25,6 +25,9 @@ import { ListUsersComponent } from './components/users/list-users/list-users.com
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
+import { DialogoUsersComponent } from './components/users/list-users/dialogo-users/dialogo-users.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import { ListChatsComponent } from './components/chats/list-chats/list-chats.com
     ListUsersComponent,
     CreaeditaUsersComponent,
     ChatsComponent,
-    ListChatsComponent
+    ListChatsComponent,
+    DialogoUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,8 @@ import { ListChatsComponent } from './components/chats/list-chats/list-chats.com
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

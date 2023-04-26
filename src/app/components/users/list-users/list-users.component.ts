@@ -2,6 +2,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/model/Users';
 import { UsersService } from 'src/app/services/users.service';
+import { DialogoUsersComponent } from './dialogo-users/dialogo-users.component';
+import { MatDialog } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-list-users',
@@ -10,10 +12,13 @@ import { UsersService } from 'src/app/services/users.service';
 })
 
 export class ListUsersComponent implements OnInit {
-  dataSource:MatTableDataSource<Users>=new MatTableDataSource();//creo q  no se instalo bien el angular material
 
-  displayedColumns:String[]=['Codigo','rol','nombre_completo','correo_electronico','contrasena','editar']
-  constructor(private as:UsersService) { }
+  lista: Users[] = []
+  dataSource:MatTableDataSource<Users>=new MatTableDataSource();//creo q  no se instalo bien el angular material
+  idMayor: number = 0
+  displayedColumns:String[]=['Codigo','rol','nombre_completo','correo_electronico','contrasena','editar', 'eliminar']
+
+  constructor(private as:UsersService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.as.list().subscribe(data=>{
@@ -21,6 +26,20 @@ export class ListUsersComponent implements OnInit {
     })
     this.as.getList().subscribe(data=>{
       this.dataSource= new MatTableDataSource(data);
+  })
+  this.as.getConfirmDelete().subscribe(data => {
+    data == true ? this.eliminar(this.idMayor) : false;
+  })
+}
+confirm(id: number) {
+  this.idMayor = id;
+  this.dialog.open(DialogoUsersComponent);
+}
+eliminar(id: number) {
+  this.as.delete(id).subscribe(() => {
+    this.as.list().subscribe(data => {
+      this.as.setList(data);
+    })
   })
 }
 filtrar(z:any){
