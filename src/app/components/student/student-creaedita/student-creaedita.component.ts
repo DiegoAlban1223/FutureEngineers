@@ -67,7 +67,7 @@ export class StudentCreaeditaComponent implements OnInit {
       this.mensaje = "Ingrese los datos !"
     }
   }
-  // para Modificar
+
   init() {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {

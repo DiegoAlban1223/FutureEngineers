@@ -20,6 +20,8 @@ import { StudentListarComponent } from './components/student/student-listar/stud
 import { StudentCreaeditaComponent } from './components/student/student-creaedita/student-creaedita.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
+import { MatDialogModule } from '@angular/material/dialog'
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     SimulationCreaeditaComponent,
     StudentComponent,
     StudentListarComponent,
-    StudentCreaeditaComponent
+    StudentCreaeditaComponent,
+    StudentDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
