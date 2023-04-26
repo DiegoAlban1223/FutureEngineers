@@ -1,3 +1,31 @@
-mat-form-field{
+/* mat-form-field{
   width: 95%;
+} */
+
+.example-form {
+  width: 50%; 
+}
+
+.example-full-width {
+  width: 95%;
+}
+
+h1{
+  color: gray;
+  font-style: normal;
+}
+
+@media screen and (min-width: 80rem) {
+  .container {
+    margin: 1em 2em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
