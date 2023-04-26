@@ -11,6 +11,7 @@ const base_url = environment.base;
 })
 export class ChatsService {
   private url = `${base_url}/Chats`;
+  private confirmarEliminacion = new Subject<Boolean>()
   private listaCambio = new Subject<Chats[]>();
   constructor(private http:HttpClient) {}
 
@@ -30,4 +31,26 @@ export class ChatsService {
   getList(){
     return this.listaCambio.asObservable();
   }
+
+  listId(id: number) {
+    return this.http.get<Chats>(`${this.url}/${id}`);
+  }
+
+  update(aut: Chats) {
+    return this.http.put(this.url + "/" + aut.id, aut);
+  }
+
+    //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
+
+    delete(id: number) {
+      return this.http.delete(`${this.url}/${id}`)
+    }
+
+    getConfirmDelete(){
+      return this.confirmarEliminacion.asObservable();
+    }
+    setConfirmDelete(estado:Boolean){
+      this.confirmarEliminacion.next(estado);
+    }
+
 }

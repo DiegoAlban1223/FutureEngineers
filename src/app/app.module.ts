@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ChatsComponent } from './components/chats/chats.component';
-import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -37,7 +37,9 @@ import {MatCardModule} from '@angular/material/card';
 
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import {MatInputModule} from '@angular/material/input';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { ListChatsComponent } from './components/chats/list-chats/list-chats.component';
+import { ChatsDialogoComponent } from './components/chats/list-chats/chats-dialogo/chats-dialogo.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     ChatsComponent,
     ListChatsComponent,
     AddChatsComponent,
-    NavbarComponent
+    NavbarComponent,
+    ChatsDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule
 
   ],
   providers: [],

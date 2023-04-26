@@ -23,9 +23,11 @@ const routes: Routes = [
     component: ChatsComponent,
     children: [
       {
-        path: 'new',
-        component: AddChatsComponent,
+        path: 'new', component: AddChatsComponent,
       },
+      {
+        path: 'edicion/:id', component: AddChatsComponent
+      }
     ],
   },
 ];
