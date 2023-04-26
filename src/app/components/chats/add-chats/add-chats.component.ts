@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Chats } from 'src/app/model/Chats';
 import * as moment from 'moment';
 import { ChatsService } from 'src/app/services/chats.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-chats',
@@ -16,8 +16,15 @@ export class AddChatsComponent implements OnInit {
   mensaje:string = "";
   maxFecha: Date = moment().add(-1, 'days').toDate();
   //maxFecha = new Date();
+  id: number = 0;
+  edicion: boolean = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void {//author-cheaedita.component.ts
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    })
     this.form = new FormGroup({
       id: new FormControl(),
       mensaje_estudiante: new FormControl(),
@@ -27,7 +34,7 @@ export class AddChatsComponent implements OnInit {
     })
   }
 
-  constructor(private aS: ChatsService, private router: Router) { }
+  constructor(private aS: ChatsService, private router: Router, private route: ActivatedRoute) { }
 
   aceptar():void{
     const now = moment();
@@ -39,11 +46,19 @@ export class AddChatsComponent implements OnInit {
     //this.chats.fecha_recepcion = this.form.value['fecha_recepcion'];
     this.chats.fecha_recepcion = moment().toDate();
     if(this.form.value['mensaje_estudiante'].length > 0 && this.form.value['mensaje_tutor']){
-      this.aS.insert(this.chats).subscribe(data =>{
-        this.aS.list().subscribe(data=>{
-          this.aS.setList(data)
+      if (this.edicion) {
+        this.aS.update(this.chats).subscribe((data) => {
+          this.aS.list().subscribe(data => {
+            this.aS.setList(data);
+          })
         })
-      })
+      } else {
+        this.aS.insert(this.chats).subscribe((data)=> {
+          this.aS.list().subscribe(data => {
+            this.aS.setList(data);
+          })
+        })
+      }
 
       this.router.navigate(['chats']);
 
@@ -52,4 +67,20 @@ export class AddChatsComponent implements OnInit {
     }
   }
 
+  init() {
+    if (this.edicion) {
+      this.aS.listId(this.id).subscribe(data => {
+        this.form = new FormGroup({
+          id: new FormControl(data.id),
+          // nameAuthor: new FormControl(data.nameAuthor),
+          // emailAuthor: new FormControl(data.emailAuthor),
+          // birthDateAuthor: new FormControl(data.birthDateAuthor),
+          mensaje_estudiante: new FormControl(data.mensaje_estudiante),
+          mensaje_tutor: new FormControl(data.mensaje_tutor),
+          fecha_envio: new FormControl(data.fecha_envio),
+          fecha_recepcion: new FormControl(data.fecha_recepcion)
+        })
+      })
+    }
+  }
 }

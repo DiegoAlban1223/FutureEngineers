@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// <<<<<<< HEAD
 import { ChatsComponent } from './components/chats/chats.component';
 import { AddChatsComponent } from './components/chats/add-chats/add-chats.component';
 
@@ -27,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'edicion/:id', component: AddChatsComponent
-      }
+      },
     ],
   },
 ];

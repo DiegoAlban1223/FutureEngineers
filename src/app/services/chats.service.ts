@@ -40,17 +40,17 @@ export class ChatsService {
     return this.http.put(this.url + "/" + aut.id, aut);
   }
 
-    //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
+  //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
 
-    delete(id: number) {
-      return this.http.delete(`${this.url}/${id}`)
-    }
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
+  }
 
-    getConfirmDelete(){
-      return this.confirmarEliminacion.asObservable();
-    }
-    setConfirmDelete(estado:Boolean){
-      this.confirmarEliminacion.next(estado);
-    }
+  getConfirmDelete(){
+    return this.confirmarEliminacion.asObservable();
+  }
+  setConfirmDelete(estado:Boolean){
+    this.confirmarEliminacion.next(estado);
+  }
 
 }
