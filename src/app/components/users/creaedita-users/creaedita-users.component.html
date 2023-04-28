@@ -45,8 +45,9 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="contraseña" formControlName="contrasena" required>
-        </mat-form-field>
+          <input [type]="changetype?'password':'text'" matInput placeholder="contraseña" formControlName="contrasena" required>
+          <span class="eyeicon"(click)="viewpass()"></span><i ngClass="visible?'fa fa-eye':'fa fa-eye-sjash'"></i>
+       </mat-form-field>
         <br>
 
         <div style="text-align:center;">
