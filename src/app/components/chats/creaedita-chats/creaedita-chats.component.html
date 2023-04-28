@@ -9,30 +9,31 @@
 </head>
 <body>
     <div class="container">
+      <br>
         <div style="text-align: center;" >
         <h1>Registro de Chats</h1>
         </div>
       <form [formGroup]="form" (submit)="aceptar()">
-        
+
         <mat-form-field class="example-full-width">
           <mat-label>Código</mat-label>
-          <input matInput placeholder="Código" formControlName="id">
-        </mat-form-field>
-        <br>
-  
-        <mat-form-field class="example-full-width">
-          <mat-label>Mensaje Estudiante</mat-label>
-          <input matInput placeholder="Hola" formControlName="mensaje_estudiante">
-        </mat-form-field>
-        <br>
-  
-        <mat-form-field class="example-full-width">
-          <mat-label>Mensaje Tutor</mat-label>
-          <input matInput placeholder="Hola" formControlName="mensaje_tutor">
+          <input matInput placeholder="Código" formControlName="id" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
+          <mat-label>Mensaje Estudiante</mat-label>
+          <input matInput placeholder="Hola" formControlName="mensaje_estudiante" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Mensaje Tutor</mat-label>
+          <input matInput placeholder="Hola" formControlName="mensaje_tutor" required>
+        </mat-form-field>
+        <br>
+
+        <!-- <mat-form-field class="example-full-width">
             <mat-label>Fecha Envío</mat-label>
             <input matInput placeholder="12:15" formControlName="fecha_envio">
           </mat-form-field>
@@ -42,7 +43,7 @@
             <mat-label>Fecha Recepción</mat-label>
             <input matInput placeholder="12:30" formControlName="fecha_recepcion">
           </mat-form-field>
-        <br>
+        <br> -->
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/chats">Cancelar</button>

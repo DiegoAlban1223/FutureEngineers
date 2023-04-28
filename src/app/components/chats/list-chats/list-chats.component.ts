@@ -11,7 +11,7 @@ import { DialogoChatsComponent } from './dialogo-chats/dialogo-chats.component';
   styleUrls: ['./list-chats.component.css']
 })
 export class ListChatsComponent implements OnInit {
-  
+
   dataSource:MatTableDataSource<Chats>=new MatTableDataSource();//creo q  no se instalo bien el angular material
   displayedColumns:String[]=['Codigo','Mensajedelalumno','Mensajedeltutor','fechadeenvio','fechaderecepcion', 'accions1', 'accions2']
   lista: Chats[]=[]

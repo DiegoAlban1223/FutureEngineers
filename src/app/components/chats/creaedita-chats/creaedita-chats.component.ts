@@ -4,6 +4,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ChatsService } from 'src/app/services/chats.service';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-creaedita-chats',
   templateUrl: './creaedita-chats.component.html',
@@ -16,6 +18,8 @@ export class CreaeditaChatsComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   chats: Chats = new Chats();
   mensaje: string = "";
+
+  maxFecha: Date = moment().add(-1, 'days').toDate();
 
   constructor( private cS: ChatsService,
     private router: Router,
@@ -34,37 +38,63 @@ export class CreaeditaChatsComponent implements OnInit {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
-      this.init();  //traer el componente de abajo 
+      this.init();  //traer el componente de abajo
     })
   }
 
   aceptar(): void {
+    const now = moment();
     this.chats.id= this.form.value['id'];
     this.chats.mensaje_estudiante = this.form.value['mensaje_estudiante'];
     this.chats.mensaje_tutor = this.form.value['mensaje_tutor'];
-    this.chats.fecha_envio = this.form.value['fecha_envio'];
-    this.chats.fecha_recepcion = this.form.value['fecha_recepcion'];
+    //this.chats.fecha_envio = this.form.value['fecha_envio'];
+    this.chats.fecha_envio = moment().toDate();
+    //this.chats.fecha_recepcion = this.form.value['fecha_recepcion'];
+    this.chats.fecha_recepcion = moment().toDate();
 
-    if (this.form.value['mensaje_estudiante'].length > 0 && this.form.value['mensaje_tutor'].length > 0
-      && this.form.value['fecha_envio'].length > 0 && this.form.value['fecha_recepcion'].length > 0) {
-      if(this.edicion){
-        this.cS.update(this.chats).subscribe(()=>{
-          this.cS.list().subscribe(data => {
-          this.cS.setList(data)})
-        })
-      }else{     
-        this.cS.insert(this.chats).subscribe(data => {
-        this.cS.list().subscribe(data => {
-          this.cS.setList(data)
-        })
-      })
-    }
-      this.router.navigate(['chats']);
+  //   if (this.form.value['mensaje_estudiante'].length > 0 && this.form.value['mensaje_tutor'].length > 0
+  //     && this.form.value['fecha_envio'].length > 0 && this.form.value['fecha_recepcion'].length > 0) {
+  //     if(this.edicion){
+  //       this.cS.update(this.chats).subscribe(()=>{
+  //         this.cS.list().subscribe(data => {
+  //         this.cS.setList(data)})
+  //       })
+  //     }else{
+  //       this.cS.insert(this.chats).subscribe(data => {
+  //       this.cS.list().subscribe(data => {
+  //         this.cS.setList(data)
+  //       })
+  //     })
+  //   }
+  //     this.router.navigate(['chats']);
 
+  //   } else {
+  //     this.mensaje = "Ingrese los datos de la chats!!"
+  //   }
+  // }
+  if (
+    this.form.value['mensaje_estudiante'].length > 0 &&
+    this.form.value['mensaje_tutor']
+  ) {
+    if (this.edicion) {
+      this.cS.update(this.chats).subscribe((data) => {
+        this.cS.list().subscribe((data) => {
+          this.cS.setList(data);
+        });
+      });
     } else {
-      this.mensaje = "Ingrese los datos de la chats!!"
+      this.cS.insert(this.chats).subscribe((data) => {
+        this.cS.list().subscribe((data) => {
+          this.cS.setList(data);
+        });
+      });
     }
+
+    this.router.navigate(['chats']);
+  } else {
+    this.mensaje = 'ingrese los datos del chat';
   }
+}
   // para Modificar
   init() {
     if (this.edicion) {
