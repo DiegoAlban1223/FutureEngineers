@@ -35,7 +35,7 @@ import { DialogoMembershipsComponent } from './components/memberships/list-membe
 import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/creaedita-chats.component';
 import { DialogoChatsComponent } from './components/chats/list-chats/dialogo-chats/dialogo-chats.component';
 import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -77,7 +77,8 @@ import { StudentDialogoComponent } from './components/student/student-listar/stu
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

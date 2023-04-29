@@ -1,9 +1,10 @@
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chats } from 'src/app/model/Chats';
 import { ChatsService } from 'src/app/services/chats.service';
 import { MatDialog } from '@angular/material/dialog'
 import { DialogoChatsComponent } from './dialogo-chats/dialogo-chats.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-chats',
@@ -16,12 +17,13 @@ export class ListChatsComponent implements OnInit {
   displayedColumns:String[]=['Codigo','Mensajedelalumno','Mensajedeltutor','fechadeenvio','fechaderecepcion', 'accions1', 'accions2']
   lista: Chats[]=[]
   idMayor: number=0
-
+  @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;
   constructor(private as:ChatsService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.as.list().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator=this.paginator;
     })
 
     this.as.getList().subscribe(data => {
