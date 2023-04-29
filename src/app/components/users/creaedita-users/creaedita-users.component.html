@@ -45,8 +45,8 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Contraseña</mat-label>
-          <input [type]="changetype?'password':'text'" matInput placeholder="contraseña" formControlName="contrasena" required>
-          <span class="eyeicon"(click)="viewpass()"></span><i ngClass="visible?'fa fa-eye':'fa fa-eye-sjash'"></i>
+          <input matInput placeholder="contraseña" [type]="hide ?'password':'text'" formControlName="contrasena" required>
+        <i class="material-icons" matSuffix (click)="hide = !hide">{{hide ? 'visibility':'visibility_off'}}</i>
        </mat-form-field>
         <br>
 

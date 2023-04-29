@@ -20,18 +20,12 @@ export class CreaeditaUsersComponent implements OnInit {
   mensaje:string="";
   id: number = 0;
   edicion: boolean=false;
-  visible: boolean=true;
-  changetype: boolean=true;
+  hide : boolean=true;
 
 
   constructor(private as:UsersService,
     private router:Router,
     private route:ActivatedRoute) { }
-
-    viewpass(){
-      this.visible = !this.visible;
-      this.changetype = !this.changetype;
-    }
 
   ngOnInit(): void {
     this.form = new FormGroup({
