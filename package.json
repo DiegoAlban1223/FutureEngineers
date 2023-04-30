@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "server": "json-server --port 5000 --watch data.js",
     "json:server":  "json-server --watch server/db.json"
   },
   "private": true,
