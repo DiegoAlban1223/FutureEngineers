@@ -33,8 +33,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -47,6 +47,9 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
+              ],
+              "allowedCommonJsDependencies": [
+                "moment"
               ],
               "outputHashing": "all"
             },
@@ -101,8 +104,6 @@
     }
   },
   "cli": {
-
-    "analytics": "01f8ceeb-5744-4198-8d72-ba0d6686d56a"
-    "analytics": "bccaf851-cc81-47a7-b0c9-d63959993c18"
+    "analytics": "d1e7af06-4cfc-43cb-87fe-a916bb482d71"
   }
 }
