@@ -28,6 +28,7 @@ export class ListChatsComponent implements OnInit {
 
     this.as.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;////////////
     })
 
     //eliminar
