@@ -20,9 +20,9 @@ export class ChatsService {
     return this.http.get<Chats[]>(this.url);
   }
 
-  
-  insert(simulation:Chats){
-    return this.http.post(this.url, simulation);
+
+  insert(chats:Chats){
+    return this.http.post(this.url,chats);
   }
 
   setList(ListaNueva: Chats[]){
@@ -34,16 +34,16 @@ export class ChatsService {
   }
 
   //modificar put
-  listId(id: number) {
-    return this.http.get<Chats>(`${this.url}/${id}`);
+  listId(idChats: number) {
+    return this.http.get<Chats>(`${this.url}/${idChats}`);
   }
 
   update(c: Chats) {
-    return this.http.put(this.url + "/" + c.id, c);
+    return this.http.put(this.url + "/" + c.idChats, c);
   }
-  
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
+
+  delete(idChats: number) {
+    return this.http.delete(`${this.url}/${idChats}`)
   }
 
   getConfirmDelete(){

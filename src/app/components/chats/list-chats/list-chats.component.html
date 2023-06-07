@@ -32,9 +32,9 @@
       <!-- Position Column -->
 
       <ng-container matColumnDef="Codigo">
-        <th mat-header-cell *matHeaderCellDef>id</th>
+        <th mat-header-cell *matHeaderCellDef>idChats</th>
 
-        <td mat-cell *matCellDef="let element">{{ element.id}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.idChats}}</td>
       </ng-container>
 
       <!-- Name Column -->
@@ -74,7 +74,7 @@
       <ng-container matColumnDef="accions1">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-        <button mat-raised-button color="primary" [routerLink]="['edicion', element.id]">
+        <button mat-raised-button color="primary" [routerLink]="['edicion', element.idChats]">
             <mat-icon>edit</mat-icon>
         </button>
         </td>
@@ -83,7 +83,7 @@
     <ng-container matColumnDef="accions2">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+          <button mat-raised-button color="primary" (click)="confirm(element.idChats)"><span class="material-icons">delete</span></button>
         </td>
     </ng-container>
 

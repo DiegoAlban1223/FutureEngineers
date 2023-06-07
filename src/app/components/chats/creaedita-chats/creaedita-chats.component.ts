@@ -44,7 +44,7 @@ export class CreaeditaChatsComponent implements OnInit {
 
   aceptar(): void {
     const now = moment();
-    this.chats.id= this.form.value['id'];
+    this.chats.idChats= this.form.value['id'];
     this.chats.mensaje_estudiante = this.form.value['mensaje_estudiante'];
     this.chats.mensaje_tutor = this.form.value['mensaje_tutor'];
     //this.chats.fecha_envio = this.form.value['fecha_envio'];
@@ -100,7 +100,7 @@ export class CreaeditaChatsComponent implements OnInit {
     if (this.edicion) {
       this.cS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idChats),
           mensaje_estudiante: new FormControl(data.mensaje_estudiante),
           mensaje_tutor: new FormControl(data.mensaje_tutor),
           fecha_envio: new FormControl(data.fecha_envio),
