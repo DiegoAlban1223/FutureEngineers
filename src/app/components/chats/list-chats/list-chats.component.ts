@@ -1,7 +1,7 @@
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 //import { MAR } from '@angular/material';
-import { Chats } from 'src/app/model/Chats';
+import { Chats } from 'src/app/model/chats';
 import { ChatsService } from 'src/app/services/chats.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ChatsDialogoComponent } from './chats-dialogo/chats-dialogo.component';

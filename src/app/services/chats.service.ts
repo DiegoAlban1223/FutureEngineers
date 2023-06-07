@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Chats } from '../model/Chats';
+import { Chats } from '../model/chats';
 import { Subject } from 'rxjs';
 
 const base_url = environment.base;
@@ -32,18 +32,18 @@ export class ChatsService {
     return this.listaCambio.asObservable();
   }
 
-  listId(id: number) {
-    return this.http.get<Chats>(`${this.url}/${id}`);
+  listId(idChats: number) {
+    return this.http.get<Chats>(`${this.url}/${idChats}`);
   }
 
   update(aut: Chats) {
-    return this.http.put(this.url + "/" + aut.id, aut);
+    return this.http.put(this.url + "/" + aut.idChats, aut);
   }
 
   //http- HttpClientModule: get-post-put-delete, hacer un cuadro comparativo
 
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
+  delete(idChats: number) {
+    return this.http.delete(`${this.url}/${idChats}`)
   }
 
   getConfirmDelete(){

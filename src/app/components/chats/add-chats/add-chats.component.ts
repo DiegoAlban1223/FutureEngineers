@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Chats } from 'src/app/model/Chats';
+import { Chats } from 'src/app/model/chats';
 import * as moment from 'moment';
 import { ChatsService } from 'src/app/services/chats.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -38,7 +38,7 @@ export class AddChatsComponent implements OnInit {
 
   aceptar():void{
     const now = moment();
-    this.chats.id=this.form.value['id'];
+    this.chats.idChats=this.form.value['id'];
     this.chats.mensaje_estudiante=this.form.value['mensaje_estudiante'];
     this.chats.mensaje_tutor = this.form.value['mensaje_tutor'];
     //this.chats.fecha_envio = this.form.value['fecha_envio'];
@@ -71,7 +71,7 @@ export class AddChatsComponent implements OnInit {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idChats),
           // nameAuthor: new FormControl(data.nameAuthor),
           // emailAuthor: new FormControl(data.emailAuthor),
           // birthDateAuthor: new FormControl(data.birthDateAuthor),
