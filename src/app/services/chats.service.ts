@@ -34,16 +34,16 @@ export class ChatsService {
   }
 
   //modificar put
-  listId(idChats: number) {
-    return this.http.get<Chats>(`${this.url}/${idChats}`);
+  listId(id: number) {
+    return this.http.get<Chats>(`${this.url}/${id}`);
   }
 
   update(c: Chats) {
     return this.http.put(this.url + "/" + c.idChats, c);
   }
 
-  delete(idChats: number) {
-    return this.http.delete(`${this.url}/${idChats}`)
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`)
   }
 
   getConfirmDelete(){
