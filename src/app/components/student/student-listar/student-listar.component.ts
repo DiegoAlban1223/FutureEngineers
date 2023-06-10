@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Students } from 'src/app/model/student';
+import { Students } from 'src/app/model/students';
 import { StudentService } from 'src/app/services/student.service';
 import { MatDialog } from '@angular/material/dialog'
 import { StudentDialogoComponent } from './student-dialogo/student-dialogo.component';

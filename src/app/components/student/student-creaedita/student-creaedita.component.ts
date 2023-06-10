@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Students } from 'src/app/model/student';
+import { Students } from 'src/app/model/students';
 import { StudentService } from 'src/app/services/student.service';
 
 @Component({
@@ -23,12 +23,12 @@ export class StudentCreaeditaComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(),
+      idStudents: new FormControl(),
       colegio: new FormControl(),
       edad: new FormControl(),
       users_user_id: new FormControl(),
-      membresia_id: new FormControl(),
-      sala_id: new FormControl(),
+      memberships_id: new FormControl(),
+      rooms_id: new FormControl(),
     })
 
     this.route.params.subscribe((data: Params) => {
@@ -39,18 +39,18 @@ export class StudentCreaeditaComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.student.id = this.form.value['id'];
+    this.student.idStudents = this.form.value['id'];
     this.student.colegio = this.form.value['colegio'];
     this.student.edad = this.form.value['edad'];
     this.student.users_user_id = this.form.value['users_user_id'];
-    this.student.membresia_id = this.form.value['membresia_id'];
-    this.student.sala_id = this.form.value['sala_id'];
+    this.student.memberships_id = this.form.value['memberships_id'];
+    this.student.rooms_id = this.form.value['rooms_id'];
 
     if (this.form.value['colegio'].length > 0 && this.form.value['edad'].length > 0
-      && this.form.value['users_user_id'].length > 0 && this.form.value['membresia_id'].length > 0
-      && this.form.value['sala_id'].length > 0) {
+      && this.form.value['users_user_id'].length > 0 && this.form.value['memberships_id'].length > 0
+      && this.form.value['rooms_id'].length > 0) {
       if(this.edicion){
-        this.aS.update(this.student).subscribe(()=>{
+        this.aS.goUpdate(this.student).subscribe(()=>{
           this.aS.list().subscribe(data => {
           this.aS.setList(data)})
         })
@@ -72,12 +72,12 @@ export class StudentCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          idStudents: new FormControl(data.idStudents),
           colegio: new FormControl(data.colegio),
           edad: new FormControl(data.edad),
           users_user_id: new FormControl(data.users_user_id),
-          membresia_id: new FormControl(data.membresia_id),
-          sala_id: new FormControl(data.sala_id)
+          memberships_id: new FormControl(data.memberships_id),
+          rooms_id: new FormControl(data.rooms_id)
         })
       })
     }

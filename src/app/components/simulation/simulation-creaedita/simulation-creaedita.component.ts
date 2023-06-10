@@ -23,7 +23,7 @@ export class SimulationCreaeditaComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(),
+      idSimulations: new FormControl(),
       nameCurso: new FormControl(),
       planCurso: new FormControl(),
       metodologiaCurso: new FormControl(),
@@ -69,7 +69,7 @@ export class SimulationCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.idSimulations),
+          idSimulations: new FormControl(data.idSimulations),
           nameCurso: new FormControl(data.nameCurso),
           planCurso: new FormControl(data.planCurso),
           metodologiaCurso: new FormControl(data.metodologiaCurso),

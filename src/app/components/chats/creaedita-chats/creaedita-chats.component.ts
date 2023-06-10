@@ -28,7 +28,7 @@ export class CreaeditaChatsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id: new FormControl(),
+      idChats: new FormControl(),
       mensaje_estudiante: new FormControl(),
       mensaje_tutor: new FormControl(),
       fecha_envio: new FormControl(),
@@ -100,7 +100,7 @@ export class CreaeditaChatsComponent implements OnInit {
     if (this.edicion) {
       this.cS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.idChats),
+          idChats: new FormControl(data.idChats),
           mensaje_estudiante: new FormControl(data.mensaje_estudiante),
           mensaje_tutor: new FormControl(data.mensaje_tutor),
           fecha_envio: new FormControl(data.fecha_envio),

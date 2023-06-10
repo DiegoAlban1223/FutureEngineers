@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Students } from '../model/student';
+import { Students } from '../model/students';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 @Injectable({
@@ -33,8 +33,8 @@ export class StudentService {
     return this.http.get<Students>(`${this.url}/${id}`);
   }
 
-  update(s: Students) {
-    return this.http.put(this.url + "/" + s.id, s);
+  goUpdate(s: Students) {
+    return this.http.put(this.url + "/" + s.idStudents, s);
   }
 
   delete(id: number) {
