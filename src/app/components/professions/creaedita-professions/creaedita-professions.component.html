@@ -1,1 +1,60 @@
-<p>creaedita-professions works!</p>
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Profesiones</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;" >
+        <h1>Registro de Profesiones</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Curso" formControlName="nombre" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Información</mat-label>
+          <input matInput placeholder="Plan Curso" formControlName="informacion" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Duración Meses</mat-label>
+            <input matInput placeholder="Metodologia Curso" formControlName="duracion" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Campo Laboral</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="campo_laboral" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Id Simulación</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="simulation" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Id Test</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="tests" required>
+          </mat-form-field>
+        <br>
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/professions">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>
+</html>

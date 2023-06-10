@@ -5,15 +5,21 @@ import { SimulationComponent } from './components/simulation/simulation.componen
 import { SimulationCreaeditaComponent } from './components/simulation/simulation-creaedita/simulation-creaedita.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentCreaeditaComponent } from './components/student/student-creaedita/student-creaedita.component';
-import { StudentListarComponent } from './components/student/student-listar/student-listar.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { MembershipsComponent } from './components/memberships/memberships.component';
 import { CreaeditaMembershipsComponent } from './components/memberships/creaedita-memberships/creaedita-memberships.component';
 import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/creaedita-chats.component';
+import { TestsComponent } from './components/tests/tests.component';
+import { CreaeditaTestsComponent } from './components/tests/creaedita-tests/creaedita-tests.component';
+import { ProfessionsComponent } from './components/professions/professions.component';
+import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
+import { ExamsComponent } from './components/exams/exams.component';
+import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
 
 const routes: Routes = [
+
   {path: 'simulations', component:SimulationComponent, children:
   [
   {
@@ -33,6 +39,7 @@ const routes: Routes = [
     path:'edicion/:id', component:CreaeditaMembershipsComponent
   }
   ]},
+
   {path: 'students', component:StudentComponent, children:
   [
     {
@@ -42,6 +49,7 @@ const routes: Routes = [
       path:'edicion/:id',component:StudentCreaeditaComponent
     }
   ]},
+  
   {path: 'users', component:UsersComponent, children:
   [
     {
@@ -60,6 +68,39 @@ const routes: Routes = [
     },
     {
       path:'edicion/:id',component:CreaeditaChatsComponent
+    }
+  ]
+  },
+
+  {path: 'tests', component:TestsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaTestsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaTestsComponent
+    }
+  ]
+  },
+
+  {path: 'professions', component:ProfessionsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaProfessionsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaProfessionsComponent
+    }
+  ]
+  },
+
+  {path: 'exams', component:ExamsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaExamsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaExamsComponent
     }
   ]
   },

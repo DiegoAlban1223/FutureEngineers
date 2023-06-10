@@ -63,7 +63,7 @@ export class CreaeditaExamsComponent implements OnInit{
       this.router.navigate(['exams']);
 
     } else {
-      this.mensaje = "Ingrese los datos de la exams!!"
+      this.mensaje = "Ingrese los datos del Examen!!"
     }
   }
   // para Modificar
