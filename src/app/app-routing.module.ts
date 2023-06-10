@@ -5,6 +5,7 @@ import { SimulationComponent } from './components/simulation/simulation.componen
 import { SimulationCreaeditaComponent } from './components/simulation/simulation-creaedita/simulation-creaedita.component';
 import { StudentComponent } from './components/student/student.component';
 import { StudentCreaeditaComponent } from './components/student/student-creaedita/student-creaedita.component';
+import { StudentListarComponent } from './components/student/student-listar/student-listar.component';
 import { UsersComponent } from './components/users/users.component';
 import { CreaeditaUsersComponent } from './components/users/creaedita-users/creaedita-users.component';
 import { ChatsComponent } from './components/chats/chats.component';
@@ -19,7 +20,6 @@ import { ExamsComponent } from './components/exams/exams.component';
 import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
 
 const routes: Routes = [
-
   {path: 'simulations', component:SimulationComponent, children:
   [
   {
@@ -39,7 +39,6 @@ const routes: Routes = [
     path:'edicion/:id', component:CreaeditaMembershipsComponent
   }
   ]},
-
   {path: 'students', component:StudentComponent, children:
   [
     {
@@ -49,7 +48,6 @@ const routes: Routes = [
       path:'edicion/:id',component:StudentCreaeditaComponent
     }
   ]},
-  
   {path: 'users', component:UsersComponent, children:
   [
     {
