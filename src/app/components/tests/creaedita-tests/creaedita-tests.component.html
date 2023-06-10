@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Tests</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;" >
+        <h1>Registro de Tests</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Preguntas</mat-label>
+          <input matInput placeholder="10" formControlName="preguntas" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Respuestas</mat-label>
+          <input matInput placeholder="10" formControlName="respuestas" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Resultado</mat-label>
+            <input matInput placeholder="20" formControlName="resultado" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Id Studiante</mat-label>
+            <input matInput placeholder="id" formControlName="students_id" required>
+          </mat-form-field>
+        <br>
+        
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/simulations">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>
+

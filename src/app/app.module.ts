@@ -36,6 +36,18 @@ import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/crea
 import { DialogoChatsComponent } from './components/chats/list-chats/dialogo-chats/dialogo-chats.component';
 import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TestsComponent } from './components/tests/tests.component';
+import { ExamsComponent } from './components/exams/exams.component';
+import { ProfessionsComponent } from './components/professions/professions.component';
+import { ListTestsComponent } from './components/tests/list-tests/list-tests.component';
+import { CreaeditaTestsComponent } from './components/tests/creaedita-tests/creaedita-tests.component';
+import { DialogoTestsComponent } from './components/tests/list-tests/dialogo-tests/dialogo-tests.component';
+import { ListExamsComponent } from './components/exams/list-exams/list-exams.component';
+import { DialogoExamsComponent } from './components/exams/list-exams/dialogo-exams/dialogo-exams.component';
+import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
+import { ListProfessionsComponent } from './components/professions/list-professions/list-professions.component';
+import { DialogoProfessionsComponent } from './components/professions/list-professions/dialogo-professions/dialogo-professions.component';
+import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +73,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CreaeditaChatsComponent,
     DialogoChatsComponent,
     StudentDialogoComponent,
+    TestsComponent,
+    ExamsComponent,
+    ProfessionsComponent,
+    ListTestsComponent,
+    CreaeditaTestsComponent,
+    DialogoTestsComponent,
+    ListExamsComponent,
+    DialogoExamsComponent,
+    CreaeditaExamsComponent,
+    ListProfessionsComponent,
+    DialogoProfessionsComponent,
+    CreaeditaProfessionsComponent,
 
   ],
   imports: [
