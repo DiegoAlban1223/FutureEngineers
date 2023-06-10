@@ -1,1 +1,55 @@
-<p>creaedita-exams works!</p>
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Examen</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;" >
+        <h1>Registro de Examen</h1>
+        </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Cantidad de Preguntas</mat-label>
+          <input matInput placeholder="Curso" formControlName="cantidadP" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Preguntas</mat-label>
+          <input matInput placeholder="Plan Curso" formControlName="preguntaE" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Respuestas</mat-label>
+            <input matInput placeholder="Metodologia Curso" formControlName="respuestaE" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Calificación</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="calificacion" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Id Simulación</mat-label>
+            <input matInput placeholder="Duracion en horas" formControlName="simulation" required>
+          </mat-form-field>
+        <br>
+
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/exams">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>
+</html>

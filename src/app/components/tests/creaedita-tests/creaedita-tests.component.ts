@@ -32,7 +32,7 @@ export class CreaeditaTestsComponent implements OnInit {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
-      this.init();  //traer el componente de abajo 
+      this.init();   
     })
   }
 
@@ -63,7 +63,7 @@ export class CreaeditaTestsComponent implements OnInit {
       this.mensaje = "Ingrese los datos de la tests!!"
     }
   }
-  // para Modificar
+ 
   init() {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
