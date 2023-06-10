@@ -37,7 +37,7 @@ export class CreaeditaMembershipsComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.memberships.id = this.form.value['id'];
+    this.memberships.idMemberships = this.form.value['id'];
     this.memberships.monto_pago = this.form.value['monto_pago'];
     this.memberships.beneficios = this.form.value['beneficios'];
     this.memberships.metodo_de_pago = this.form.value['metodo_de_pago'];
@@ -45,7 +45,7 @@ export class CreaeditaMembershipsComponent implements OnInit {
     if (this.form.value['monto_pago'].length > 0 && this.form.value['beneficios'].length > 0
       && this.form.value['metodo_de_pago'].length > 0) {
       if(this.edicion){
-        this.mS.update(this.memberships).subscribe(()=>{
+        this.mS.goUpdate(this.memberships).subscribe(()=>{
           this.mS.list().subscribe(data => {
           this.mS.setList(data)})
         })
@@ -67,7 +67,7 @@ export class CreaeditaMembershipsComponent implements OnInit {
     if (this.edicion) {
       this.mS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idMemberships),
           monto_pago: new FormControl(data.monto_pago),
           beneficios: new FormControl(data.beneficios),
           metodo_de_pago: new FormControl(data.metodo_de_pago),

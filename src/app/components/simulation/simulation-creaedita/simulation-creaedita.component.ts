@@ -38,7 +38,7 @@ export class SimulationCreaeditaComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.simulation.id = this.form.value['id'];
+    this.simulation.idSimulations = this.form.value['id'];
     this.simulation.nameCurso = this.form.value['nameCurso'];
     this.simulation.planCurso = this.form.value['planCurso'];
     this.simulation.metodologiaCurso = this.form.value['metodologiaCurso'];
@@ -47,7 +47,7 @@ export class SimulationCreaeditaComponent implements OnInit {
     if (this.form.value['nameCurso'].length > 0 && this.form.value['planCurso'].length > 0
       && this.form.value['metodologiaCurso'].length > 0 && this.form.value['duracionHoras'].length > 0) {
       if(this.edicion){
-        this.aS.update(this.simulation).subscribe(()=>{
+        this.aS.goUpdate(this.simulation).subscribe(()=>{
           this.aS.list().subscribe(data => {
           this.aS.setList(data)})
         })
@@ -69,7 +69,7 @@ export class SimulationCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idSimulations),
           nameCurso: new FormControl(data.nameCurso),
           planCurso: new FormControl(data.planCurso),
           metodologiaCurso: new FormControl(data.metodologiaCurso),

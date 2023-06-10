@@ -29,7 +29,7 @@
 
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> Código </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.idMemberships}} </td>
             </ng-container>
 
             <ng-container matColumnDef="montoPago">
@@ -51,7 +51,7 @@
             <ng-container matColumnDef="accions1">
                 <th mat-header-cell *matHeaderCellDef> Actualizar </th>
                 <td mat-cell *matCellDef="let element">
-                <button mat-raised-button color="primary" [routerLink]="['edicion', element.id]">
+                <button mat-raised-button color="primary" [routerLink]="['edicion', element.idMemberships]">
                     <mat-icon>edit</mat-icon>
                 </button>
                 </td>
@@ -60,7 +60,7 @@
             <ng-container matColumnDef="accions2">
                 <th mat-header-cell *matHeaderCellDef> Eliminar </th>
                 <td mat-cell *matCellDef="let element">
-                  <button mat-raised-button color="primary" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+                  <button mat-raised-button color="primary" (click)="confirm(element.idMemberships)"><span class="material-icons">delete</span></button>
                 </td>
             </ng-container>
 

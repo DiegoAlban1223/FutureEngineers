@@ -77,7 +77,7 @@ export class CreaeditaChatsComponent implements OnInit {
     this.form.value['mensaje_tutor']
   ) {
     if (this.edicion) {
-      this.cS.update(this.chats).subscribe((data) => {
+      this.cS.goUpdate(this.chats).subscribe((data) => {
         this.cS.list().subscribe((data) => {
           this.cS.setList(data);
         });

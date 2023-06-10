@@ -34,12 +34,12 @@ export class SimulationsService {
   }
 
   //modificar put
-  listId(id: number) {
-    return this.http.get<Simulations>(`${this.url}/${id}`);
+  listId(idSimulations: number) {
+    return this.http.get<Simulations>(`${this.url}/${idSimulations}`);
   }
 
-  update(s: Simulations) {
-    return this.http.put(this.url + "/" + s.id, s);
+  goUpdate(s: Simulations) {
+    return this.http.put(this.url + "/" + s.idSimulations, s);
   }
   
   delete(id: number) {
