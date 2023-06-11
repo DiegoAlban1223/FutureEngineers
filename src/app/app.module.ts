@@ -48,6 +48,7 @@ import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/crea
 import { ListProfessionsComponent } from './components/professions/list-professions/list-professions.component';
 import { DialogoProfessionsComponent } from './components/professions/list-professions/dialogo-professions/dialogo-professions.component';
 import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { CreaeditaProfessionsComponent } from './components/professions/creaedit
     ListProfessionsComponent,
     DialogoProfessionsComponent,
     CreaeditaProfessionsComponent,
+    RoomsComponent,
 
   ],
   imports: [
