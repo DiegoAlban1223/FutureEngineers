@@ -49,7 +49,7 @@ const routes: Routes = [
       path:'edicion/:id',component:StudentCreaeditaComponent
     }
   ]},
-  
+
   {path: 'users', component:UsersComponent, children:
   [
     {
