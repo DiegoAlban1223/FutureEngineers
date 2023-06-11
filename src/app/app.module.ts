@@ -49,6 +49,10 @@ import { ListProfessionsComponent } from './components/professions/list-professi
 import { DialogoProfessionsComponent } from './components/professions/list-professions/dialogo-professions/dialogo-professions.component';
 import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
+import { ListRoomsComponent } from './components/rooms/list-rooms/list-rooms.component';
+import { DialogoRoomsComponent } from './components/rooms/list-rooms/dialogo-rooms/dialogo-rooms.component';
+import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
+import { MatSelectModule } from '@angular/material/select';///////////////true or false -modulo angular material boleano para Rooms
 
 @NgModule({
   declarations: [
@@ -87,6 +91,9 @@ import { RoomsComponent } from './components/rooms/rooms.component';
     DialogoProfessionsComponent,
     CreaeditaProfessionsComponent,
     RoomsComponent,
+    ListRoomsComponent,
+    DialogoRoomsComponent,
+    CreaeditaRoomsComponent
 
   ],
   imports: [
@@ -104,7 +111,8 @@ import { RoomsComponent } from './components/rooms/rooms.component';
     MatFormFieldModule,
     MatButtonModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule//////////////////
   ],
   providers: [],
   bootstrap: [AppComponent]

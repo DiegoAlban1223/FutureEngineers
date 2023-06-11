@@ -105,6 +105,17 @@ const routes: Routes = [
   ]
   },
 
+  {path: 'rooms', component:ProfessionsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaProfessionsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaProfessionsComponent
+    }
+  ]
+  },
+
 ]
 
 
