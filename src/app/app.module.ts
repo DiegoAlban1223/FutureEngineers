@@ -52,7 +52,11 @@ import { RoomsComponent } from './components/rooms/rooms.component';
 import { ListRoomsComponent } from './components/rooms/list-rooms/list-rooms.component';
 import { DialogoRoomsComponent } from './components/rooms/list-rooms/dialogo-rooms/dialogo-rooms.component';
 import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
-import { MatSelectModule } from '@angular/material/select';///////////////true or false -modulo angular material boleano para Rooms
+import { MatSelectModule } from '@angular/material/select';
+import { TutorsComponent } from './components/tutors/tutors.component';
+import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors.component';
+import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
+import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';///////////////true or false -modulo angular material boleano para Rooms
 
 @NgModule({
   declarations: [
@@ -93,7 +97,11 @@ import { MatSelectModule } from '@angular/material/select';///////////////true o
     RoomsComponent,
     ListRoomsComponent,
     DialogoRoomsComponent,
-    CreaeditaRoomsComponent
+    CreaeditaRoomsComponent,
+    TutorsComponent,
+    ListTutorsComponent,
+    CreaeditaTutorsComponent,
+    DialogoTutorsComponent
 
   ],
   imports: [

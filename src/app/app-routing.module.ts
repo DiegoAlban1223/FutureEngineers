@@ -17,6 +17,8 @@ import { ProfessionsComponent } from './components/professions/professions.compo
 import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
 import { ExamsComponent } from './components/exams/exams.component';
 import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
+import { TutorsComponent } from './components/tutors/tutors.component';
+import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
 
 const routes: Routes = [
 
@@ -116,6 +118,16 @@ const routes: Routes = [
   ]
   },
 
+  {path: 'tutors', component:TutorsComponent, children:
+  [
+    {
+      path:'new',component:CreaeditaTutorsComponent
+    },
+    {
+      path:'edicion/:id',component:CreaeditaTutorsComponent
+    }
+  ]
+  },
 ]
 
 
