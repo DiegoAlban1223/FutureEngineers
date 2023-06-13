@@ -38,8 +38,9 @@ export class ChatsService {
     return this.http.get<Chats>(`${this.url}/${id}`);
   }
 
-  goUpdate(c: Chats) {
-    return this.http.put(this.url + "/" + c.idChats, c);
+  goUpdate(cha: Chats) {
+    //return this.http.put(this.url + "/" + cha.idChats, cha);
+    return this.http.put(this.url, cha);
   }
 
   delete(id: number) {

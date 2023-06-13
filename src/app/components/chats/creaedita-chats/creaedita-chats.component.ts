@@ -27,19 +27,18 @@ export class CreaeditaChatsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      idChats: new FormControl(),
-      mensaje_estudiante: new FormControl(),
-      mensaje_tutor: new FormControl(),
-      fecha_envio: new FormControl(),
-      fecha_recepcion: new FormControl(),
-    })
-
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();  //traer el componente de abajo
     })
+    this.form = new FormGroup({
+      id: new FormControl(),
+      mensaje_estudiante: new FormControl(),
+      mensaje_tutor: new FormControl(),
+      fecha_envio: new FormControl(),
+      fecha_recepcion: new FormControl(),
+    });
   }
 
   aceptar(): void {

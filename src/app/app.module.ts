@@ -48,6 +48,11 @@ import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/crea
 import { ListProfessionsComponent } from './components/professions/list-professions/list-professions.component';
 import { DialogoProfessionsComponent } from './components/professions/list-professions/dialogo-professions/dialogo-professions.component';
 import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
+import { ListRoomsComponent } from './components/rooms/list-rooms/list-rooms.component';
+import { DialogoRoomsComponent } from './components/rooms/list-rooms/dialogo-rooms/dialogo-rooms.component';
+import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
+import { MatSelectModule } from '@angular/material/select';///////////////true or false -modulo angular material boleano para Rooms
 
 @NgModule({
   declarations: [
@@ -85,6 +90,10 @@ import { CreaeditaProfessionsComponent } from './components/professions/creaedit
     ListProfessionsComponent,
     DialogoProfessionsComponent,
     CreaeditaProfessionsComponent,
+    RoomsComponent,
+    ListRoomsComponent,
+    DialogoRoomsComponent,
+    CreaeditaRoomsComponent
 
   ],
   imports: [
@@ -102,7 +111,8 @@ import { CreaeditaProfessionsComponent } from './components/professions/creaedit
     MatFormFieldModule,
     MatButtonModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule//////////////////
   ],
   providers: [],
   bootstrap: [AppComponent]
