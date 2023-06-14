@@ -1,8 +1,11 @@
+import { Users } from "./Users"
+import { Students } from "./students"
+
 export class Tests{
     idTests: number=0
     preguntas: string=""
     respuestas: string=""
     resultado: string=""
-    students_id: number=0
-    User_user_id: number=0
+    students_id: Students= new Students()
+    User_user_id: Users= new Users()
 }
