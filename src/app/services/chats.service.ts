@@ -38,7 +38,7 @@ export class ChatsService {
     return this.http.get<Chats>(`${this.url}/${id}`);
   }
 
-  goUpdate(cha: Chats) {
+  update(cha: Chats) {
     //return this.http.put(this.url + "/" + cha.idChats, cha);
     return this.http.put(this.url, cha);
   }

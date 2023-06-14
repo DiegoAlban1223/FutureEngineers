@@ -23,7 +23,7 @@ export class SimulationCreaeditaComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      idSimulations: new FormControl(),
+      id: new FormControl(),
       nameCurso: new FormControl(),
       planCurso: new FormControl(),
       metodologiaCurso: new FormControl(),
@@ -47,7 +47,7 @@ export class SimulationCreaeditaComponent implements OnInit {
     if (this.form.value['nameCurso'].length > 0 && this.form.value['planCurso'].length > 0
       && this.form.value['metodologiaCurso'].length > 0 && this.form.value['duracionHoras'].length > 0) {
       if(this.edicion){
-        this.aS.goUpdate(this.simulation).subscribe(()=>{
+        this.aS.update(this.simulation).subscribe(()=>{
           this.aS.list().subscribe(data => {
           this.aS.setList(data)})
         })
@@ -69,7 +69,7 @@ export class SimulationCreaeditaComponent implements OnInit {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idSimulations: new FormControl(data.idSimulations),
+          id: new FormControl(data.idSimulations),
           nameCurso: new FormControl(data.nameCurso),
           planCurso: new FormControl(data.planCurso),
           metodologiaCurso: new FormControl(data.metodologiaCurso),
