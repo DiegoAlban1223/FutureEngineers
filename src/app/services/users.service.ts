@@ -30,7 +30,7 @@ export class UsersService {
     return this.http.get<Users>(`${this.url}/${id}`);
   }
   update(a: Users){
-    return this.http.put(this.url+"/"+a.id, a);
+    return this.http.put(this.url+"/"+a.idUsers, a);
   }
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)

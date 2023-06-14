@@ -17,7 +17,7 @@ export class ListUsersComponent implements OnInit {
   lista: Users[] = []
   dataSource:MatTableDataSource<Users>=new MatTableDataSource();//creo q  no se instalo bien el angular material
   idMayor: number = 0
-  displayedColumns:String[]=['codigo','rol','nombre_completo','correo_electronico','editar', 'eliminar']
+  displayedColumns:String[]=['idUsers','rol','nombre_completo','correo_electronico','editar', 'eliminar']
   @ViewChild(MatPaginator,  {static: true}) paginator!: MatPaginator;
 
   constructor(private as:UsersService, private dialog: MatDialog) { }
