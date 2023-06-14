@@ -37,7 +37,7 @@ export class CreaeditaUsersComponent implements OnInit {
     })
     this.route.params.subscribe((data: Params) => {
       this.id = data['idUsers'];
-      this.edicion = data['idUsers'] != null;
+      this.edicion = data['id'] != null;
       this.init();  //traer el componente de abajo
     })
   }

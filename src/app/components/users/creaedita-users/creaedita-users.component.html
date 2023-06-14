@@ -19,6 +19,11 @@
 
     <form class="example-form" [formGroup]="form" (submit)="aceptar()">
 
+      <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input matInput required placeholder="idUsers" formControlName="idUsers">
+      </mat-form-field>
+
         <mat-form-field class="example-full-width">
           <mat-label>Rol</mat-label>
           <input matInput placeholder="rol" formControlName="rol" required>
