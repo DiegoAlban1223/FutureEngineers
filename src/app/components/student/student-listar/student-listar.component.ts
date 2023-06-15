@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Students } from 'src/app/model/student';
+import { Students } from 'src/app/model/students';
 import { StudentService } from 'src/app/services/student.service';
 import { MatDialog } from '@angular/material/dialog'
 import { StudentDialogoComponent } from './student-dialogo/student-dialogo.component';
@@ -15,7 +15,7 @@ export class StudentListarComponent implements OnInit {
   dataSource:MatTableDataSource<Students>=new MatTableDataSource();
   displayedColumns:string[]=['id','colegio','edad','membresia','sala_id', 'accions1', 'accions2']
   lista: Students[]=[]
-  idMayor: number=0  
+  idMayor: number=0
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   constructor(private sS:StudentService, private dialog: MatDialog) { }
 

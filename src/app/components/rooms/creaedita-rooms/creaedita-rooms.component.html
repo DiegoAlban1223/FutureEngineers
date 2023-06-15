@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Salas</title>
+</head>
+<body>
+  <div class="container">
+    <div style="text-align: center;" >
+      <h1>Registro de Rooms</h1>
+      </div>
+      <form [formGroup]="form" (submit)="aceptar()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>idRooms</mat-label>
+          <input matInput placeholder="idRooms" formControlName="idRooms" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Codigo Rooms</mat-label>
+          <input matInput placeholder="Codigo Rooms" formControlName="codigo" required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre Room</mat-label>
+            <input matInput placeholder="Nombre" formControlName="Nombre" required>
+          </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Cantidad de alumnos</mat-label>
+            <input matInput placeholder="cantidad_alumnos" formControlName="cantidad_alumnos" required>
+          </mat-form-field>
+        <br>
+<!-- lo de abajo se descomenta cuando esté Tutors -->
+
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Tutores_id</mat-label>
+          <mat-select formControlName="Tutores_id" [(value)]="idTutorsSelecionado" required>
+            <mat-option *ngFor="let t of listaTutors" [value]="t.Tutores_id">
+              {{t.Tutores_id>}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+<!-- lo de abajo se descomenta cuando esté Users -->
+
+                <!-- <mat-form-field appearance="fill">
+          <mat-label>Tutores_User_user_id</mat-label>
+          <mat-select formControlName="users" [(value)]="idUsersSeleccionado" required>
+            <mat-option *ngFor="let u of listaUsers" [value]="u.Id">
+              {{u.Id>}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+                        <!-- <mat-form-field appearance="fill">
+          <mat-label>Chats_id</mat-label>
+          <mat-select formControlName="Chats_id" [(value)]="idChatsSeleccionado" required>
+            <mat-option *ngFor="let c of listaChats" [value]="c.Chats_id">
+              {{c.mensaje_tutor}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+        <mat-form-field appearance="fill">
+          <mat-label>status</mat-label>
+          <mat-select [(ngModel)]="status">
+            <mat-option [value]="true">True</mat-option>
+            <mat-option [value]="false">False</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/rooms">Cancelar</button>
+            </div>
+        <p>{{mensaje}}</p>
+      </form>
+    </div>
+</body>

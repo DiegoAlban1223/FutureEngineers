@@ -39,7 +39,7 @@ export class SimulationsService {
   }
 
   update(s: Simulations) {
-    return this.http.put(this.url + "/" + s.id, s);
+    return this.http.put(this.url, s);
   }
   
   delete(id: number) {

@@ -37,8 +37,8 @@ export class MembershipsService {
     return this.http.get<Memberships>(`${this.url}/${id}`);
   }
 
-  update(s: Memberships) {
-    return this.http.put(this.url + "/" + s.id, s);
+  goUpdate(s: Memberships) {
+    return this.http.put(this.url + "/" + s.idMemberships, s);
   }
   
   delete(id: number) {

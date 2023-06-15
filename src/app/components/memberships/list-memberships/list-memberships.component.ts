@@ -37,13 +37,13 @@ export class ListMembershipsComponent implements OnInit {
     })
   }
 
-  confirm(id: number) {
-    this.idMayor = id;
+  confirm(idMemberships: number) {
+    this.idMayor = idMemberships;
     this.dialog.open(DialogoMembershipsComponent);
   }
 
-  eliminar(id: number) {
-    this.as.delete(id).subscribe(() => {
+  eliminar(idMemberships: number) {
+    this.as.delete(idMemberships).subscribe(() => {
       this.as.list().subscribe(data => {
         this.as.setList(data);
       })

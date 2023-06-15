@@ -36,6 +36,27 @@ import { CreaeditaChatsComponent } from './components/chats/creaedita-chats/crea
 import { DialogoChatsComponent } from './components/chats/list-chats/dialogo-chats/dialogo-chats.component';
 import { StudentDialogoComponent } from './components/student/student-listar/student-dialogo/student-dialogo.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TestsComponent } from './components/tests/tests.component';
+import { ExamsComponent } from './components/exams/exams.component';
+import { ProfessionsComponent } from './components/professions/professions.component';
+import { ListTestsComponent } from './components/tests/list-tests/list-tests.component';
+import { CreaeditaTestsComponent } from './components/tests/creaedita-tests/creaedita-tests.component';
+import { DialogoTestsComponent } from './components/tests/list-tests/dialogo-tests/dialogo-tests.component';
+import { ListExamsComponent } from './components/exams/list-exams/list-exams.component';
+import { DialogoExamsComponent } from './components/exams/list-exams/dialogo-exams/dialogo-exams.component';
+import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
+import { ListProfessionsComponent } from './components/professions/list-professions/list-professions.component';
+import { DialogoProfessionsComponent } from './components/professions/list-professions/dialogo-professions/dialogo-professions.component';
+import { CreaeditaProfessionsComponent } from './components/professions/creaedita-professions/creaedita-professions.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
+import { ListRoomsComponent } from './components/rooms/list-rooms/list-rooms.component';
+import { DialogoRoomsComponent } from './components/rooms/list-rooms/dialogo-rooms/dialogo-rooms.component';
+import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
+import { MatSelectModule } from '@angular/material/select';
+import { TutorsComponent } from './components/tutors/tutors.component';
+import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors.component';
+import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
+import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';///////////////true or false -modulo angular material boleano para Rooms
 
 @NgModule({
   declarations: [
@@ -61,6 +82,26 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CreaeditaChatsComponent,
     DialogoChatsComponent,
     StudentDialogoComponent,
+    TestsComponent,
+    ExamsComponent,
+    ProfessionsComponent,
+    ListTestsComponent,
+    CreaeditaTestsComponent,
+    DialogoTestsComponent,
+    ListExamsComponent,
+    DialogoExamsComponent,
+    CreaeditaExamsComponent,
+    ListProfessionsComponent,
+    DialogoProfessionsComponent,
+    CreaeditaProfessionsComponent,
+    RoomsComponent,
+    ListRoomsComponent,
+    DialogoRoomsComponent,
+    CreaeditaRoomsComponent,
+    TutorsComponent,
+    ListTutorsComponent,
+    CreaeditaTutorsComponent,
+    DialogoTutorsComponent
 
   ],
   imports: [
@@ -78,7 +119,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatFormFieldModule,
     MatButtonModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule//////////////////
   ],
   providers: [],
   bootstrap: [AppComponent]
