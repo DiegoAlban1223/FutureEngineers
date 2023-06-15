@@ -9,6 +9,7 @@ import { Tutors } from 'src/app/model/tutors';
 import { RoomsService } from 'src/app/services/rooms.service';
 import { ChatsService } from 'src/app/services/chats.service';
 import { UsersService } from 'src/app/services/users.service';
+import { tutorsService } from 'src/app/services/tutors.service';
 
 @Component({
   selector: 'app-creaedita-rooms',
@@ -22,24 +23,24 @@ export class CreaeditaRoomsComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   listaChats: Chats[] = [];
   listaUsers: Users[] = [];
-  //listaTutors: Tutors[] = [];
+  listaTutors: Tutors[] = [];
 
   idChatsSeleccionado: number = 0;
   idUsersSeleccionado: number = 0;
   status:boolean = false;
-  //idTutorsSeleccionado: number = 0;
+  idTutorsSeleccionado: number = 0;
 
   constructor(private rS: RoomsService,
     private router:Router,
     private route: ActivatedRoute,
     private cS: ChatsService,
     private uS: UsersService,
-    /*private tS: TutorsService*/) { }
+    private tS: tutorsService) { }
 
   ngOnInit(): void {
     this.cS.list().subscribe(data => {this.listaChats = data});
     this.uS.list().subscribe(data => {this.listaUsers = data});
-    //this.tS.list().subscribe(data => {this.listaTutors = data});
+    this.tS.list().subscribe(data => {this.listaTutors = data});
 
     this.form = new FormGroup({
       idRooms: new FormControl(),
@@ -50,8 +51,8 @@ export class CreaeditaRoomsComponent implements OnInit {
       //Tutores_User_user_id: new FormControl(),
       tutors:new FormControl(),
       status: new FormControl(this.status),
-      Chats_id: new FormControl(),
-      //chats:new FormControl(),
+      //Chats_id: new FormControl(),
+      chats:new FormControl(),
       users:new FormControl()
 
       /*,
@@ -71,16 +72,16 @@ export class CreaeditaRoomsComponent implements OnInit {
     //this.room.Chats_id.mensaje_tutor = this.form.value['chats.mensaje_tutor']
     this.room.Chats_id.mensaje_tutor = this.form.value['Chats_id']
 
-    if (this.idChatsSeleccionado>0 && this.idUsersSeleccionado>0) {
+    if (this.idChatsSeleccionado>0 && this.idUsersSeleccionado>0 && this.idTutorsSeleccionado>0) {
       let c = new Chats();
       let u = new Users();
-      //let t = new Tutors();
+      let t = new Tutors();
       c.idChats = this.idChatsSeleccionado;
       u.idUsers = this.idUsersSeleccionado;
-      // t.idTutors = this.idTutorsSelecionado
+      t.idTutors = this.idTutorsSeleccionado;
       this.room.Chats_id=c;
       this.room.Tutores_User_user_id = u;
-      //this.room.Tutores_id = t;
+      this.room.Tutores_id = t;
       this.rS.insert(this.room).subscribe(() => {
       this.rS.list().subscribe(data => {
             this.rS.setList(data);
