@@ -20,6 +20,17 @@
         </mat-form-field>
         <br>
 
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>User</mat-label>
+          <mat-select formControlName="Users_user_id" [(value)]="idUsersSeleccionado" required>
+            <mat-option *ngFor="let u of lista" [value]="u.idUsers">
+              {{u.nombre_completo}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/tutors">Cancelar</button>

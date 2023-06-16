@@ -33,8 +33,9 @@ export class tutorsService {
     return this.http.get<Tutors>(`${this.url}/${id}`);
   }
 
-  goUpdate(t: Tutors) {
-    return this.http.put(this.url + "/" + t.idTutors, t);
+  update(t: Tutors) {
+    //return this.http.put(this.url + "/" + t.idTutors, t);
+    return this.http.put(this.url, t);
   }
 
   delete(id: number) {
