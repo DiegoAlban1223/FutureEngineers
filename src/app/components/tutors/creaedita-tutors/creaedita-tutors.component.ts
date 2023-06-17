@@ -33,7 +33,7 @@ export class CreaeditaTutorsComponent implements OnInit {
     this.form = new FormGroup({
       idTutors: new FormControl(),
       especializacion: new FormControl(),
-      Users_user_id: new FormControl()
+      id_users: new FormControl()
     })
 
     this.route.params.subscribe((data: Params) => {
@@ -46,7 +46,7 @@ export class CreaeditaTutorsComponent implements OnInit {
   aceptar(): void {
     this.tutors.idTutors = this.form.value['idTutors'];
     this.tutors.especializacion = this.form.value['especializacion'];
-    this.tutors.id_users.nombre_completo= this.form.value['id_users.nombre_completo']
+    this.tutors.id_users.nombre_completo= this.form.value['id_users']
 
     if(this.idUsersSeleccionado>0){
             let u = new Users();
@@ -88,7 +88,7 @@ export class CreaeditaTutorsComponent implements OnInit {
         this.form = new FormGroup({
           idTutors: new FormControl(data. idTutors),
           especializacion: new FormControl(data.especializacion),
-          Users_user_id: new FormControl(data.id_users)
+          id_users: new FormControl(data.id_users)
         })
       })
     }
