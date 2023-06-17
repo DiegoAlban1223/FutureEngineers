@@ -49,7 +49,7 @@ export class CreaeditaUsersComponent implements OnInit {
     this.user.rol=this.form.value['rol'];
     this.user.nombre_completo=this.form.value['nombre_completo'];
     this.user.correo_electronico=this.form.value['correo_electronico'];
-    this.user.contrasena=this.form.value['contrasena'];
+    this.user.contraseña=this.form.value['contrasena'];
 
     if(this.form.value['nombre_completo'].length > 0 && this.form.value['correo_electronico'].length > 0){
       if(this.edicion){
@@ -78,7 +78,7 @@ export class CreaeditaUsersComponent implements OnInit {
             rol: new  FormControl(data.rol),
             nombre_completo: new FormControl(data.nombre_completo),
             correo_electronico: new FormControl(data.correo_electronico),
-            contrasena: new FormControl(data.contrasena)
+            contrasena: new FormControl(data.contraseña)
           })
       })
     }
