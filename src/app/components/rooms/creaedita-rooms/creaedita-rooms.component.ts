@@ -77,7 +77,7 @@ export class CreaeditaRoomsComponent implements OnInit {
       let u = new Users();
       let t = new Tutors();
       c.idChats = this.idChatsSeleccionado;
-      u.idUsers = this.idUsersSeleccionado;
+      u.id_users = this.idUsersSeleccionado;
       t.idTutors = this.idTutorsSeleccionado;
       this.room.Chats_id=c;
       this.room.Tutores_User_user_id = u;

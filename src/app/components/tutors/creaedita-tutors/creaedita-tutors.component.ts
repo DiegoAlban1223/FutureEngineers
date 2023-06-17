@@ -28,13 +28,13 @@ export class CreaeditaTutorsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.uS.list().subscribe(data => { this.lista = data });
+
     this.form = new FormGroup({
       idTutors: new FormControl(),
       especializacion: new FormControl(),
       Users_user_id: new FormControl()
     })
-
-    this.uS.list().subscribe(data => { this.lista = data });
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -46,12 +46,12 @@ export class CreaeditaTutorsComponent implements OnInit {
   aceptar(): void {
     this.tutors.idTutors = this.form.value['idTutors'];
     this.tutors.especializacion = this.form.value['especializacion'];
-    this.tutors.Users_user_id.nombre_completo= this.form.value['users.nombre_completo']
+    this.tutors.id_users.nombre_completo= this.form.value['id_users.nombre_completo']
 
     if(this.idUsersSeleccionado>0){
             let u = new Users();
-            u.idUsers = this.idUsersSeleccionado
-            this.tutors.Users_user_id =u;
+            u.id_users = this.idUsersSeleccionado
+            this.tutors.id_users =u;
             this.tS.insert(this.tutors).subscribe(data => {
             this.tS.list().subscribe(data => {
               this.tS.setList(data)
@@ -88,7 +88,7 @@ export class CreaeditaTutorsComponent implements OnInit {
         this.form = new FormGroup({
           idTutors: new FormControl(data. idTutors),
           especializacion: new FormControl(data.especializacion),
-          Users_user_id: new FormControl(data.Users_user_id)
+          Users_user_id: new FormControl(data.id_users)
         })
       })
     }

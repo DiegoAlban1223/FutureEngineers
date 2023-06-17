@@ -14,8 +14,8 @@ import { DialogoTutorsComponent } from './dialogo-tutors/dialogo-tutors.componen
 export class ListTutorsComponent implements OnInit {
 
   dataSource:MatTableDataSource<Tutors>=new MatTableDataSource();
-  displayedColumns:string[]=['idTutors','especializacion','Users_user_id', 'accions1', 'accions2']
-  lista: Tutors[]=[]
+  displayedColumns:string[]=['idTutors','especializacion','id_users', 'accions1', 'accions2']
+  lista: Tutors[]=[];
   idMayor: number=0
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   constructor(private tS:tutorsService, private dialog: MatDialog) { }
