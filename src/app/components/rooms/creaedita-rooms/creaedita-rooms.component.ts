@@ -63,14 +63,13 @@ export class CreaeditaRoomsComponent implements OnInit {
   aceptar(): void {
     this.room.idRooms = this.form.value['id'];
     this.room.codigo = this.form.value['Codigo'];
-    this.room.Nombre = this.form.value['Nombre'];
+    this.room.nombre = this.form.value['Nombre'];
     this.room.cantidad_alumnos = this.form.value['Cantidad_alumnos'];
     this.room.status = this.form.value['status'];
-    //this.room.Tutores_id.=this.form.value['Tutores_id.nombre_tutor'];
-    //this.room.Tutores_User_user_id.rol = this.form.value['Tutores_User_user_id.rol']
-    this.room.Tutores_User_user_id.rol = this.form.value['users.rol']
+    this.room.tutor.especializacion=this.form.value['tutor.especializacion'];
+    this.room.user.rol = this.form.value['user.rol']
     //this.room.Chats_id.mensaje_tutor = this.form.value['chats.mensaje_tutor']
-    this.room.Chats_id.mensaje_tutor = this.form.value['Chats_id']
+    this.room.chat.mensaje_tutor = this.form.value['chat.mensaje_tutor']
 
     if (this.idChatsSeleccionado>0 && this.idUsersSeleccionado>0 && this.idTutorsSeleccionado>0) {
       let c = new Chats();
@@ -79,9 +78,9 @@ export class CreaeditaRoomsComponent implements OnInit {
       c.idChats = this.idChatsSeleccionado;
       u.idUsers = this.idUsersSeleccionado;
       t.idTutors = this.idTutorsSeleccionado;
-      this.room.Chats_id=c;
-      this.room.Tutores_User_user_id = u;
-      this.room.Tutores_id = t;
+      this.room.chat=c;
+      this.room.user = u;
+      this.room.tutor = t;
       this.rS.insert(this.room).subscribe(() => {
       this.rS.list().subscribe(data => {
             this.rS.setList(data);
