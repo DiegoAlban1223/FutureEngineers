@@ -29,7 +29,7 @@ export class CreaeditaUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      id_users: new FormControl(),
+      idUsers: new FormControl(),
       rol: new FormControl(),
       nombre_completo: new FormControl(),
       correo_electronico: new FormControl(),
@@ -45,7 +45,7 @@ export class CreaeditaUsersComponent implements OnInit {
 
 
   aceptar():void{
-    this.user.id_users=this.form.value['id'];
+    this.user.idUsers=this.form.value['id'];
     this.user.rol=this.form.value['rol'];
     this.user.nombre_completo=this.form.value['nombre_completo'];
     this.user.correo_electronico=this.form.value['correo_electronico'];
@@ -74,7 +74,7 @@ export class CreaeditaUsersComponent implements OnInit {
     if(this.edicion){
       this.as.listId(this.id).subscribe(data=>{
           this.form = new FormGroup({
-            id_users: new FormControl(data.id_users),
+            id: new FormControl(data.idUsers),
             rol: new  FormControl(data.rol),
             nombre_completo: new FormControl(data.nombre_completo),
             correo_electronico: new FormControl(data.correo_electronico),

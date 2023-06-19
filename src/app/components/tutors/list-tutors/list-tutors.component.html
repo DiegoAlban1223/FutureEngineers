@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tutor</title>
+  <title>Document</title>
 </head>
 <body>
     <div class="container">
@@ -29,7 +29,7 @@
               The actual rendered columns are set as a property on the row definition" -->
 
         <!-- Position Column  ng-container son las columnas-->
-        <ng-container matColumnDef="idTutors">
+        <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Código </th>
           <td mat-cell *matCellDef="let element"> {{element.idTutors}} </td>
         </ng-container>
@@ -40,9 +40,9 @@
           <td mat-cell *matCellDef="let element"> {{element.especializacion}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="id_users">
+        <ng-container matColumnDef="usuario">
           <th mat-header-cell *matHeaderCellDef> Usuario </th>
-          <td mat-cell *matCellDef="let element"> {{element.id_users.nombre_completo}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.user.nombre_completo}} </td>
         </ng-container>
 
         <!-- <ng-container matColumnDef="Users_user_id">
@@ -50,21 +50,21 @@
           <td mat-cell *matCellDef="let element"> {{element.Users_user_id.username}} </td>
         </ng-container> -->
 
-        <ng-container matColumnDef="accions1">
+        <!-- <ng-container matColumnDef="accions1">
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="primary" [routerLink]="['edicion', element.idTutors]">
             <mat-icon>edit</mat-icon>
           </button>
           </td>
-      </ng-container>
+      </ng-container> -->
 
-      <ng-container matColumnDef="accions2">
+      <!-- <ng-container matColumnDef="accions2">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="primary" (click)="confirm(element.idTutors)"><span class="material-icons">delete</span></button>
         </td>
-      </ng-container>
+      </ng-container> -->
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

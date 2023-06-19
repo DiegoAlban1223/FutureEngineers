@@ -23,8 +23,8 @@
         <br>
         <mat-form-field appearance="fill">
           <mat-label>User</mat-label>
-          <mat-select formControlName="id_users" [(value)]="idUsersSeleccionado" required>
-            <mat-option *ngFor="let u of lista" [value]="u.id_users">
+          <mat-select formControlName="user" [(value)]="idUsersSeleccionado" required>
+            <mat-option *ngFor="let u of lista" [value]="u.idUsers">
               {{u.nombre_completo}}
             </mat-option>
           </mat-select>

@@ -31,68 +31,83 @@ export class CreaeditaTutorsComponent implements OnInit {
     this.uS.list().subscribe(data => { this.lista = data });
 
     this.form = new FormGroup({
-      idTutors: new FormControl(),
+      id: new FormControl(),
       especializacion: new FormControl(),
-      id_users: new FormControl()
+      user: new FormControl()
     })
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();  //traer el componente de abajo
+      //this.idUsersSeleccionado = this.id;
     })
   }
 
   aceptar(): void {
-    this.tutors.idTutors = this.form.value['idTutors'];
+    this.tutors.idTutors = this.form.value['id'];
     this.tutors.especializacion = this.form.value['especializacion'];
-    this.tutors.id_users.nombre_completo= this.form.value['id_users']
+    this.tutors.user.nombre_completo= this.form.value['user.nombre_completo']
 
-    if(this.idUsersSeleccionado>0){
-            let u = new Users();
-            u.id_users = this.idUsersSeleccionado
-            this.tutors.id_users =u;
-            this.tS.insert(this.tutors).subscribe(data => {
-            this.tS.list().subscribe(data => {
-              this.tS.setList(data)
-            })
+    //if(this.idUsersSeleccionado>0){
+    //        let u = new Users();
+    //        u.id_users = this.idUsersSeleccionado
+    //        this.tutors.user =u;
+    //       this.tS.insert(this.tutors).subscribe(() => {
+    //        this.tS.list().subscribe(data => {
+    //          this.tS.setList(data)
+    //        })
+    //      })
+    //      this.router.navigate(['tutors']);
+    //    }
+
+    if (this.form.value['especializacion'].length > 0) {
+      if (this.edicion) {
+        //this.idUsersSeleccionado=this.id;
+        if(this.idUsersSeleccionado>0){
+        let u = new Users();
+        u.idUsers = this.idUsersSeleccionado
+        this.tutors.user =u;
+        this.tS.update(this.tutors).subscribe(() => {
+          this.tS.list().subscribe((data) => {
+            this.tS.setList(data);
+          });
+        });
+        //this.router.navigate(['tutors']);
+      }
+      } else {
+        if(this.idUsersSeleccionado>0){
+          let u = new Users();
+          u.idUsers = this.idUsersSeleccionado
+          this.tutors.user =u;
+         this.tS.insert(this.tutors).subscribe(() => {
+          this.tS.list().subscribe(data => {
+            this.tS.setList(data)
           })
-        }
-          this.router.navigate(['tutors']);
-    // if (this.form.value['especializacion'].length > 0 ) {
-    //   if(this.edicion){
-    //     this.tS.update(this.tutors).subscribe(()=>{
-    //       this.tS.list().subscribe(data => {
-    //       this.tS.setList(data)})
-    //     })
-    //   }else if(this.idUsersSeleccionado>0){
-    //     let u = new Users();
-    //     u.idUsers = this.idUsersSeleccionado
-    //     this.tutors.Users_user_id =u;
-    //     this.tS.insert(this.tutors).subscribe(data => {
-    //     this.tS.list().subscribe(data => {
-    //       this.tS.setList(data)
-    //     })
-    //   })
-    // }
-    //   this.router.navigate(['tutors']);
-
-    // } else {
-    //   this.mensaje = "Ingrese los datos !"
-    // }
-  }
+        })
+              //this.router.navigate(['tutors']);
+      }
+      }
+      this.router.navigate(['tutors']);
+    } else {
+      this.mensaje = 'ingrese los datos del tutor';
+    }
+}
   // para Modificar
   init() {
     if (this.edicion) {
       this.tS.listId(this.id).subscribe(data => {
+        //this.idUsersSeleccionado = this.id;
         this.form = new FormGroup({
-          idTutors: new FormControl(data. idTutors),
+          id: new FormControl(data. idTutors),//acá tiene que ser id para que modifique
           especializacion: new FormControl(data.especializacion),
-          id_users: new FormControl(data.id_users)
+          user: new FormControl(data.user)
+
         })
       })
     }
   }
-  }
+
+}
 
 
