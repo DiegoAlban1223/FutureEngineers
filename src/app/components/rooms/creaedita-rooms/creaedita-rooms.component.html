@@ -42,7 +42,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Tutores_id</mat-label>
-          <mat-select formControlName="Tutores_id" [(value)]="idTutorsSeleccionado" required>
+          <mat-select formControlName="tutor" [(value)]="idTutorsSeleccionado" required>
             <mat-option *ngFor="let t of listaTutors" [value]="t.idTutors">
               {{t.idTutors}}
             </mat-option>
@@ -52,10 +52,10 @@
 <!-- lo de abajo se descomenta cuando esté Users -->
 
                 <!-- <mat-form-field appearance="fill">
-          <mat-label>Tutores_User_user_id</mat-label>
-          <mat-select formControlName="users" [(value)]="idUsersSeleccionado" required>
-            <mat-option *ngFor="let u of listaUsers" [value]="u.Id">
-              {{u.Id>}}
+          <mat-label>Tutor</mat-label>
+          <mat-select formControlName="user" [(value)]="idUsersSeleccionado" required>
+            <mat-option *ngFor="let u of listaUsers" [value]="u.idUsers">
+              {{u.id>}}
             </mat-option>
           </mat-select>
         </mat-form-field> -->
