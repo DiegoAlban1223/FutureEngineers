@@ -76,7 +76,7 @@ export class CreaeditaChatsComponent implements OnInit {
     this.form.value['mensaje_tutor']
   ) {
     if (this.edicion) {
-      this.cS.goUpdate(this.chats).subscribe((data) => {
+      this.cS.update(this.chats).subscribe((data) => {
         this.cS.list().subscribe((data) => {
           this.cS.setList(data);
         });
@@ -99,7 +99,7 @@ export class CreaeditaChatsComponent implements OnInit {
     if (this.edicion) {
       this.cS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idChats: new FormControl(data.idChats),
+          id: new FormControl(data.idChats),
           mensaje_estudiante: new FormControl(data.mensaje_estudiante),
           mensaje_tutor: new FormControl(data.mensaje_tutor),
           fecha_envio: new FormControl(data.fecha_envio),

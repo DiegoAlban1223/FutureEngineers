@@ -19,6 +19,8 @@ import { ExamsComponent } from './components/exams/exams.component';
 import { CreaeditaExamsComponent } from './components/exams/creaedita-exams/creaedita-exams.component';
 import { TutorsComponent } from './components/tutors/tutors.component';
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
+import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
 
 const routes: Routes = [
 
@@ -107,13 +109,13 @@ const routes: Routes = [
   ]
   },
 
-  {path: 'rooms', component:ProfessionsComponent, children:
+  {path: 'rooms', component:RoomsComponent, children:
   [
     {
-      path:'new',component:CreaeditaProfessionsComponent
+      path:'new',component:CreaeditaRoomsComponent
     },
     {
-      path:'edicion/:id',component:CreaeditaProfessionsComponent
+      path:'edicion/:id',component:CreaeditaRoomsComponent
     }
   ]
   },

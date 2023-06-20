@@ -66,7 +66,7 @@ export class CreaeditaUsersComponent implements OnInit {
       this.router.navigate(['users']);
     }
     else{
-      this.mensaje = "Ingrese los datos del usurio!!"
+      this.mensaje = "Ingrese los datos del usuario!!"
     }
   }
   init(){
