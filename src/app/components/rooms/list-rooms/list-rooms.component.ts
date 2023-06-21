@@ -15,7 +15,8 @@ export class ListRoomsComponent implements OnInit {
 
   lista: Rooms[] = [];
   dataSource:MatTableDataSource<Rooms> = new MatTableDataSource();
-  displayedColumns: string[] = ['id','Codigo','Nombre', 'Cantidad_alumnos', 'Tutores_id', 'Tutores_User_user_id','status','Chats_id', 'accions1', 'accions2'];
+  //displayedColumns: string[] = ['id','Codigo','Nombre', 'Cantidad_alumnos', 'Tutores_id', 'Tutores_User_user_id','status','Chats_id', 'accions1', 'accions2'];
+  displayedColumns: string[] = ['id','Codigo','Nombre', 'Cantidad_alumnos', 'Tutores_id','status','Chats_id', 'accions1', 'accions2']; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
   idMayor: number = 0;
   @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;
 

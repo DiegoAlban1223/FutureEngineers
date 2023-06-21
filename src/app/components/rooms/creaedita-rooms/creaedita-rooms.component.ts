@@ -22,11 +22,11 @@ export class CreaeditaRoomsComponent implements OnInit {
   mensaje: string = ""
   maxFecha: Date = moment().add(-1, 'days').toDate();
   listaChats: Chats[] = [];
-  listaUsers: Users[] = [];
+  //listaUsers: Users[] = []; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
   listaTutors: Tutors[] = [];
 
   idChatsSeleccionado: number = 0;
-  idUsersSeleccionado: number = 0;
+  //idUsersSeleccionado: number = 0; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
   status:boolean = false;
   idTutorsSeleccionado: number = 0;
 
@@ -34,12 +34,12 @@ export class CreaeditaRoomsComponent implements OnInit {
     private router:Router,
     private route: ActivatedRoute,
     private cS: ChatsService,
-    private uS: UsersService,
+    //private uS: UsersService, //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
     private tS: tutorsService) { }
 
   ngOnInit(): void {
     this.cS.list().subscribe(data => {this.listaChats = data});
-    this.uS.list().subscribe(data => {this.listaUsers = data});
+    //this.uS.list().subscribe(data => {this.listaUsers = data}); //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
     this.tS.list().subscribe(data => {this.listaTutors = data});
 
     this.form = new FormGroup({
@@ -53,7 +53,7 @@ export class CreaeditaRoomsComponent implements OnInit {
       status: new FormControl(this.status),
       //Chats_id: new FormControl(),
       chats:new FormControl(),
-      users:new FormControl()
+      //users:new FormControl() //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
 
       /*,
       Tutores_id: new FormControl()*/
@@ -67,19 +67,20 @@ export class CreaeditaRoomsComponent implements OnInit {
     this.room.cantidad_alumnos = this.form.value['Cantidad_alumnos'];
     this.room.status = this.form.value['status'];
     this.room.tutor.especializacion=this.form.value['tutor.especializacion'];
-    this.room.user.rol = this.form.value['user.rol']
+    //this.room.user.rol = this.form.value['user.rol'] //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
     //this.room.Chats_id.mensaje_tutor = this.form.value['chats.mensaje_tutor']
     this.room.chat.mensaje_tutor = this.form.value['chat.mensaje_tutor']
 
-    if (this.idChatsSeleccionado>0 && this.idUsersSeleccionado>0 && this.idTutorsSeleccionado>0) {
+    //if (this.idChatsSeleccionado>0 && this.idUsersSeleccionado>0 && this.idTutorsSeleccionado>0) {  //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
+    if (this.idChatsSeleccionado>0 && this.idTutorsSeleccionado>0) {
       let c = new Chats();
       let u = new Users();
       let t = new Tutors();
       c.idChats = this.idChatsSeleccionado;
-      u.idUsers = this.idUsersSeleccionado;
+      //u.idUsers = this.idUsersSeleccionado; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
       t.idTutors = this.idTutorsSeleccionado;
       this.room.chat=c;
-      this.room.user = u;
+      //this.room.user = u; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
       this.room.tutor = t;
       this.rS.insert(this.room).subscribe(() => {
       this.rS.list().subscribe(data => {
