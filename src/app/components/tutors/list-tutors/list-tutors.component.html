@@ -39,6 +39,14 @@
           <th mat-header-cell *matHeaderCellDef> Especializacion </th>
           <td mat-cell *matCellDef="let element"> {{element.especializacion}} </td>
         </ng-container>
+        <ng-container matColumnDef="nombre_completo">
+          <th mat-header-cell *matHeaderCellDef> nombreCompleto </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="correo_electronico">
+          <th mat-header-cell *matHeaderCellDef> Correo </th>
+          <td mat-cell *matCellDef="let element"> {{element.correo_electronico}} </td>
+        </ng-container>
 
         <ng-container matColumnDef="usuario">
           <th mat-header-cell *matHeaderCellDef> Usuario </th>
@@ -50,21 +58,21 @@
           <td mat-cell *matCellDef="let element"> {{element.Users_user_id.username}} </td>
         </ng-container> -->
 
-        <!-- <ng-container matColumnDef="accions1">
+        <ng-container matColumnDef="accions1">
           <th mat-header-cell *matHeaderCellDef> Acciones </th>
           <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="primary" [routerLink]="['edicion', element.idTutors]">
             <mat-icon>edit</mat-icon>
           </button>
           </td>
-      </ng-container> -->
+      </ng-container>
 
-      <!-- <ng-container matColumnDef="accions2">
+      <ng-container matColumnDef="accions2">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
           <button mat-raised-button color="primary" (click)="confirm(element.idTutors)"><span class="material-icons">delete</span></button>
         </td>
-      </ng-container> -->
+      </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

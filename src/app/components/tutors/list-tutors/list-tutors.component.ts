@@ -15,7 +15,8 @@ export class ListTutorsComponent implements OnInit {
 
   dataSource:MatTableDataSource<Tutors>=new MatTableDataSource();
   //displayedColumns:string[]=['id','especializacion','usuario', 'accions1', 'accions2']
-  displayedColumns:string[]=['id','especializacion','usuario']
+  //displayedColumns:string[]=['id','especializacion','usuario']
+  displayedColumns:string[]=['id','especializacion','usuario','nombre_completo','correo_electronico', 'accions1', 'accions2']
   lista: Tutors[]=[];
   idMayor: number=0
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;

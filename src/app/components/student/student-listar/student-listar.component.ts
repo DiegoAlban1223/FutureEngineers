@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class StudentListarComponent implements OnInit {
   dataSource:MatTableDataSource<Students>=new MatTableDataSource();
-  displayedColumns:string[]=['id','colegio','edad','membresia','sala_id', 'accions1', 'accions2']
+  displayedColumns:string[]=['id','colegio','edad','membresia','nombre_completo','correo_electronico','sala_id', 'accions1', 'accions2']
   lista: Students[]=[]
   idMayor: number=0
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
