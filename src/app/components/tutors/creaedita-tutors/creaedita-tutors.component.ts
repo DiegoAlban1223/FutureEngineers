@@ -18,7 +18,7 @@ export class CreaeditaTutorsComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   tutors: Tutors = new Tutors();
   mensaje: string = "";
-  lista: Users[] = [];
+  //lista: Users[] = [];//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
   idUsersSeleccionado:number = 0;
 
   constructor(private tS: tutorsService,
@@ -28,12 +28,12 @@ export class CreaeditaTutorsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.uS.list().subscribe(data => { this.lista = data });
+    //this.uS.list().subscribe(data => { this.lista = data });//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
 
     this.form = new FormGroup({
       id: new FormControl(),
       especializacion: new FormControl(),
-      user: new FormControl(),
+      //user: new FormControl(),//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
       nombre_completo: new FormControl(),
       correo_electronico: new FormControl()
     })
@@ -49,10 +49,11 @@ export class CreaeditaTutorsComponent implements OnInit {
   aceptar(): void {
     this.tutors.idTutors = this.form.value['id'];
     this.tutors.especializacion = this.form.value['especializacion'];
-    this.tutors.user.nombre_completo= this.form.value['user.nombre_completo']
+    //this.tutors.user.nombre_completo= this.form.value['user.nombre_completo']
     this.tutors.nombre_completo=this.form.value['nombre_completo'];
     this.tutors.correo_electronico=this.form.value['correo_electronico'];
-    //if(this.idUsersSeleccionado>0){
+
+    //if(this.idUsersSeleccionado>0){//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
     //        let u = new Users();
     //        u.id_users = this.idUsersSeleccionado
     //        this.tutors.user =u;
@@ -64,32 +65,53 @@ export class CreaeditaTutorsComponent implements OnInit {
     //      this.router.navigate(['tutors']);
     //    }
 
-    if (this.form.value['especializacion'].length > 0) {
+    // if (this.form.value['especializacion'].length > 0) {
+    //   if (this.edicion) {
+    //     //this.idUsersSeleccionado=this.id;
+    //     if(this.idUsersSeleccionado>0){
+    //     let u = new Users();
+    //     u.idUsers = this.idUsersSeleccionado
+    //     this.tutors.user =u;
+    //     this.tS.update(this.tutors).subscribe(() => {
+    //       this.tS.list().subscribe((data) => {
+    //         this.tS.setList(data);
+    //       });
+    //     });
+    //     //this.router.navigate(['tutors']);
+    //   }
+    //   } else {
+    //     if(this.idUsersSeleccionado>0){
+    //       let u = new Users();
+    //       u.idUsers = this.idUsersSeleccionado
+    //       this.tutors.user =u;
+    //      this.tS.insert(this.tutors).subscribe(() => {
+    //       this.tS.list().subscribe(data => {
+    //         this.tS.setList(data)
+    //       })
+    //     })
+    //           //this.router.navigate(['tutors']);
+    //   }
+    //   }
+    //   this.router.navigate(['tutors']);
+    // } else {
+    //   this.mensaje = 'ingrese los datos del tutor';
+    // }
+    if (
+      this.form.value['especializacion'].length > 0 &&//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
+      this.form.value['nombre_completo'].length  > 0 && this.form.value['correo_electronico'].length  > 0
+    ) {
       if (this.edicion) {
-        //this.idUsersSeleccionado=this.id;
-        if(this.idUsersSeleccionado>0){
-        let u = new Users();
-        u.idUsers = this.idUsersSeleccionado
-        this.tutors.user =u;
         this.tS.update(this.tutors).subscribe(() => {
           this.tS.list().subscribe((data) => {
             this.tS.setList(data);
           });
         });
-        //this.router.navigate(['tutors']);
-      }
       } else {
-        if(this.idUsersSeleccionado>0){
-          let u = new Users();
-          u.idUsers = this.idUsersSeleccionado
-          this.tutors.user =u;
-         this.tS.insert(this.tutors).subscribe(() => {
-          this.tS.list().subscribe(data => {
-            this.tS.setList(data)
-          })
-        })
-              //this.router.navigate(['tutors']);
-      }
+        this.tS.insert(this.tutors).subscribe((data) => {
+          this.tS.list().subscribe((data) => {
+            this.tS.setList(data);
+          });
+        });
       }
       this.router.navigate(['tutors']);
     } else {
@@ -104,7 +126,7 @@ export class CreaeditaTutorsComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data. idTutors),//acá tiene que ser id para que modifique
           especializacion: new FormControl(data.especializacion),
-          user: new FormControl(data.user.idUsers),
+          //user: new FormControl(data.user.idUsers),//DESVINCULANDO TUTORS DE USER PARA IMPLEMENTAR SECURITY
           nombre_completo: new FormControl(data.nombre_completo),
           correo_electronico: new FormControl(data.correo_electronico)
         })
