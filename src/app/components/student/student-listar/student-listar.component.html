@@ -58,6 +58,15 @@
           <td mat-cell *matCellDef="let element"> {{element.memberships_id}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="nombre_completo">
+          <th mat-header-cell *matHeaderCellDef> nombreCompleto </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="correo_electronico">
+          <th mat-header-cell *matHeaderCellDef> Correo </th>
+          <td mat-cell *matCellDef="let element"> {{element.correo_electronico}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="sala_id">
           <th mat-header-cell *matHeaderCellDef> Id Sala </th>
           <td mat-cell *matCellDef="let element"> {{element.rooms_id}} </td>

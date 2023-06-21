@@ -29,6 +29,8 @@ export class StudentCreaeditaComponent implements OnInit {
       users_user_id: new FormControl(),
       memberships_id: new FormControl(),
       rooms_id: new FormControl(),
+      nombre_completo: new FormControl(),
+      correo_electronico: new FormControl()
     })
 
     this.route.params.subscribe((data: Params) => {
@@ -45,6 +47,8 @@ export class StudentCreaeditaComponent implements OnInit {
     this.student.users_user_id = this.form.value['users_user_id'];
     this.student.memberships_id = this.form.value['memberships_id'];
     this.student.rooms_id = this.form.value['rooms_id'];
+    this.student.nombre_completo=this.form.value['nombre_completo'];
+    this.student.correo_electronico=this.form.value['correo_electronico'];
 
     if (this.form.value['colegio'].length > 0 && this.form.value['edad'].length > 0
       && this.form.value['users_user_id'].length > 0 && this.form.value['memberships_id'].length > 0
