@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Simulations } from '../model/simulations';
 import { HttpClient } from '@angular/common/http';
-
+import {professionsSimulationDTO} from '../model/professionsSimulationDTO';
 const base_url= environment.base
 
 @Injectable({
@@ -51,5 +51,9 @@ export class SimulationsService {
   }
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
+  }
+
+  getSimulationsCountByProfessions(): Observable<professionsSimulationDTO[]> {
+    return this.http.get<professionsSimulationDTO[]>(`${this.url}/simulations-count`);
   }
 }

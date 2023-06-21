@@ -51,4 +51,5 @@ export class ProfessionsService {
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
   }
+
 }

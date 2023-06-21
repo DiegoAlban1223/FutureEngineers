@@ -23,7 +23,7 @@ export class CreaeditaProfessionsComponent implements OnInit{
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      idProfessions: new FormControl(),
+      id: new FormControl(),
       nombre: new FormControl(),
       informacion: new FormControl(),
       duracion: new FormControl(),
@@ -74,7 +74,7 @@ export class CreaeditaProfessionsComponent implements OnInit{
     if (this.edicion) {
       this.pS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idProfessions: new FormControl(data.idProfessions),
+          id: new FormControl(data.idProfessions),
           nameCurso: new FormControl(data.nombre),
           informacion: new FormControl(data.informacion),
           duracion: new FormControl(data.duracion),

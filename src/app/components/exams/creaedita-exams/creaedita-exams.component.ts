@@ -23,7 +23,7 @@ export class CreaeditaExamsComponent implements OnInit{
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      idExams: new FormControl(),
+      id: new FormControl(),
       cantidadPreguntas: new FormControl(),
       preguntaExam: new FormControl(),
       respuestaExam: new FormControl(),
@@ -71,7 +71,7 @@ export class CreaeditaExamsComponent implements OnInit{
     if (this.edicion) {
       this.eS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idExams: new FormControl(data.idExams),
+          id: new FormControl(data.idExams),
           cantidadPreguntas: new FormControl(data.cantidadPreguntas),
           preguntaExam: new FormControl(data.preguntaExam),
           respuestaExam: new FormControl(data.respuestaExam),

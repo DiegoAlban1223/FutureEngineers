@@ -43,7 +43,7 @@ export class CreaeditaRoomsComponent implements OnInit {
     this.tS.list().subscribe(data => {this.listaTutors = data});
 
     this.form = new FormGroup({
-      idRooms: new FormControl(),
+      id: new FormControl(),
       codigo: new FormControl(),
       Nombre: new FormControl(),
       cantidad_alumnos: new FormControl(),
@@ -91,4 +91,18 @@ export class CreaeditaRoomsComponent implements OnInit {
 
   }
 }
+
+//  // para Modificar FALTA
+//  init() {
+//   if (this.edicion) {
+//     this.aS.listId(this.id).subscribe(data => {
+//       this.form = new FormGroup({
+//         id: new FormControl(data.idSimulations),
+//         nameCurso: new FormControl(data.nameCurso),
+//         planCurso: new FormControl(data.planCurso),
+//         metodologiaCurso: new FormControl(data.metodologiaCurso),
+//         duracionHoras: new FormControl(data.duracionHoras)
+//       })
+//     })
+//   }
 }
