@@ -101,7 +101,7 @@ export class CreaeditaTutorsComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data. idTutors),//acá tiene que ser id para que modifique
           especializacion: new FormControl(data.especializacion),
-          user: new FormControl(data.user)
+          user: new FormControl(data.user.idUsers)
 
         })
       })

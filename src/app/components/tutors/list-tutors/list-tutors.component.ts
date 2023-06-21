@@ -14,8 +14,9 @@ import { DialogoTutorsComponent } from './dialogo-tutors/dialogo-tutors.componen
 export class ListTutorsComponent implements OnInit {
 
   dataSource:MatTableDataSource<Tutors>=new MatTableDataSource();
-  //displayedColumns:string[]=['id','especializacion','usuario', 'accions1', 'accions2']
-  displayedColumns:string[]=['id','especializacion','usuario']
+  displayedColumns:string[]=['id','especializacion','usuario', 'accions1', 'accions2']
+  //displayedColumns:string[]=['id','especializacion','usuario']
+  //displayedColumns:string[]=['id','especializacion','usuario','nombreCompleto','Correo']
   lista: Tutors[]=[];
   idMayor: number=0
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
