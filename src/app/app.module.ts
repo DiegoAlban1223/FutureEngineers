@@ -122,7 +122,7 @@ import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-
     MatDialogModule,
     MatPaginatorModule,
     MatSelectModule,//////////////////
-    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
