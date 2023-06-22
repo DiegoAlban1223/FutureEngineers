@@ -47,7 +47,7 @@ export class CreaeditaTutorsComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.tutors.idTutors = this.form.value['id'];
+    this.tutors.idTutors = this.form.value['id'];// SOLO AQUÍ SE LE COLOCA ID Y NO idRooms, a los demás SÍ
     this.tutors.especializacion = this.form.value['especializacion'];
     //this.tutors.user.nombre_completo= this.form.value['user.nombre_completo']
     this.tutors.nombre_completo=this.form.value['nombre_completo'];
@@ -101,7 +101,7 @@ export class CreaeditaTutorsComponent implements OnInit {
       this.form.value['nombre_completo'].length  > 0 && this.form.value['correo_electronico'].length  > 0
     ) {
       if (this.edicion) {
-        this.tS.update(this.tutors).subscribe(() => {
+        this.tS.update(this.tutors).subscribe((data) => {
           this.tS.list().subscribe((data) => {
             this.tS.setList(data);
           });

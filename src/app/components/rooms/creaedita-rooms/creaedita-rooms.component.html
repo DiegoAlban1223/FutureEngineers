@@ -15,21 +15,21 @@
       </div>
       <form [formGroup]="form" (submit)="aceptar()">
 
-        <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
           <mat-label>idRooms</mat-label>
-          <input matInput placeholder="idRooms" formControlName="idRooms" required>
+          <input matInput placeholder="idRooms" formControlName="id" required>
         </mat-form-field>
-        <br>
+        <br> -->
 
         <mat-form-field class="example-full-width">
           <mat-label>Codigo Rooms</mat-label>
-          <input matInput placeholder="Codigo Rooms" formControlName="codigo" required>
+          <input matInput placeholder="codigo" formControlName="codigo" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
             <mat-label>Nombre Room</mat-label>
-            <input matInput placeholder="Nombre" formControlName="Nombre" required>
+            <input matInput placeholder="nombre" formControlName="nombre" required>
           </mat-form-field>
         <br>
 
@@ -42,7 +42,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Tutores_id</mat-label>
-          <mat-select formControlName="tutor" [(value)]="idTutorsSeleccionado" required>
+          <mat-select formControlName="tutors" [(value)]="idTutorsSeleccionado" required>
             <mat-option *ngFor="let t of listaTutors" [value]="t.idTutors">
               {{t.idTutors}}
             </mat-option>
@@ -62,7 +62,7 @@
 
                         <mat-form-field appearance="fill">
           <mat-label>Chats_id</mat-label>
-          <mat-select formControlName="Chats_id" [(value)]="idChatsSeleccionado" required>
+          <mat-select formControlName="chats" [(value)]="idChatsSeleccionado" required>
             <mat-option *ngFor="let c of listaChats" [value]="c.idChats">
               {{c.mensaje_tutor}}
             </mat-option>
@@ -72,8 +72,8 @@
         <mat-form-field appearance="fill">
           <mat-label>status</mat-label>
           <mat-select [(ngModel)]="status">
-            <mat-option [value]="true">True</mat-option>
-            <mat-option [value]="false">False</mat-option>
+            <mat-option [value]="true">true</mat-option>
+            <mat-option [value]="false">false</mat-option>
           </mat-select>
         </mat-form-field>
 

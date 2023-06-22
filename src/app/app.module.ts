@@ -58,6 +58,7 @@ import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
 import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';///////////////true or false -modulo angular material boleano para Rooms
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,7 +121,8 @@ import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-
     MatButtonModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatSelectModule//////////////////
+    MatSelectModule,//////////////////
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
