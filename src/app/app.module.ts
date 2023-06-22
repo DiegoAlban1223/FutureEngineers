@@ -58,7 +58,10 @@ import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
 import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
-import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';///////////////true or false -modulo angular material boleano para Rooms
+import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';
+import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
+import { LoginComponent } from './components/login/login.component';///////////////true or false -modulo angular material boleano para Rooms
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -105,7 +108,9 @@ import { Reporte01Component } from './components/reportes/reporte01/reporte01.co
     CreaeditaTutorsComponent,
     DialogoTutorsComponent,
     ReportesComponent,
-    Reporte01Component
+    Reporte01Component,
+    Reporte02Component,
+    LoginComponent
 
   ],
   imports: [
@@ -124,7 +129,9 @@ import { Reporte01Component } from './components/reportes/reporte01/reporte01.co
     MatButtonModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatSelectModule//////////////////
+    MatSelectModule,
+    MatSnackBarModule
+    //////////////////
   ],
   providers: [],
   bootstrap: [AppComponent]
