@@ -56,7 +56,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { TutorsComponent } from './components/tutors/tutors.component';
 import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors.component';
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
-import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';///////////////true or false -modulo angular material boleano para Rooms
+import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';///////////////true or false -modulo angular material boleano para Rooms
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-
     TutorsComponent,
     ListTutorsComponent,
     CreaeditaTutorsComponent,
-    DialogoTutorsComponent
+    DialogoTutorsComponent,
+    ReportesComponent,
+    Reporte01Component
 
   ],
   imports: [
