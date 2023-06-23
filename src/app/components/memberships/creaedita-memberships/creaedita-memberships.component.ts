@@ -45,7 +45,7 @@ export class CreaeditaMembershipsComponent implements OnInit {
     if (this.form.value['monto_pago'].length > 0 && this.form.value['beneficios'].length > 0
       && this.form.value['metodo_de_pago'].length > 0) {
       if(this.edicion){
-        this.mS.goUpdate(this.memberships).subscribe(()=>{
+        this.mS.update(this.memberships).subscribe(()=>{
           this.mS.list().subscribe(data => {
           this.mS.setList(data)})
         })

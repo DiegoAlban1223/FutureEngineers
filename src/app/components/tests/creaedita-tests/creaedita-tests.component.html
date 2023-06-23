@@ -32,10 +32,14 @@
           </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Id Studiante</mat-label>
-            <input matInput placeholder="id" formControlName="students_id" required>
-          </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Estudiante</mat-label>
+            <mat-select formControlName="ID" [(value)]="idStudentSelecionado" required>
+              <mat-option *ngFor="let u of list" [value]="u.idStudents">
+                {{u.nombre_completo}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
         <br>
         
         <div style="text-align: center;">

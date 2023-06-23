@@ -8,4 +8,6 @@ export class Tests{
     resultado: string=""
     students_id: Students= new Students()
     User_user_id: Users= new Users()
+      //user:Users=new Users()
+
 }

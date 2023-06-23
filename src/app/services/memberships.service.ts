@@ -20,8 +20,8 @@ export class MembershipsService {
     return this.http.get<Memberships[]>(this.url);
   }
 
-  insert(simulation:Memberships){
-    return this.http.post(this.url, simulation);
+  insert(memberships:Memberships){
+    return this.http.post(this.url, memberships);
   }
 
   setList(ListaNueva: Memberships[]){
@@ -37,8 +37,8 @@ export class MembershipsService {
     return this.http.get<Memberships>(`${this.url}/${id}`);
   }
 
-  goUpdate(s: Memberships) {
-    return this.http.put(this.url + "/" + s.idMemberships, s);
+  update(s: Memberships) {
+    return this.http.put(this.url, s);
   }
   
   delete(id: number) {

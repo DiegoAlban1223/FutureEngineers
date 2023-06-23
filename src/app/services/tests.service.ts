@@ -33,12 +33,12 @@ export class TestsService {
   }
 
   //modificar put
-  listId(idTests: number) {
-    return this.http.get<Tests>(`${this.url}/${idTests}`);
+  listId(id: number) {
+    return this.http.get<Tests>(`${this.url}/${id}`);
   }
 
-  goUpdate(t: Tests) {
-    return this.http.put(this.url + "/" + t.idTests, t);
+  update(t: Tests) {
+    return this.http.put(this.url, t);
   }
   
   delete(id: number) {
