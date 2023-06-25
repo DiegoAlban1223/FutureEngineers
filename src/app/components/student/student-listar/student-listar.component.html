@@ -15,6 +15,8 @@
       </div>
       <div style="text-align:end;">
         <button mat-raised-button color="primary" routerLink="/students/new">Agregar</button>
+        <button mat-raised-button color="primary" routerLink="/students/new">Reporte</button>
+
     </div>
     <br>
 
@@ -54,7 +56,7 @@
       -->
 
         <ng-container matColumnDef="memberships">
-          <th mat-header-cell *matHeaderCellDef> Id Membresía </th>
+          <th mat-header-cell *matHeaderCellDef> Beneficios de Membresia </th>
           <td mat-cell *matCellDef="let element"> {{element.memberships.beneficios}} </td>
         </ng-container>
 

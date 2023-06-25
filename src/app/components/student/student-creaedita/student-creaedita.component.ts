@@ -61,8 +61,8 @@ export class StudentCreaeditaComponent implements OnInit {
     this.student.nombre_completo=this.form.value['nombre_completo'];
     this.student.correo_electronico=this.form.value['correo_electronico'];
 
-    if (this.form.value['colegio'] && this.form.value['edad']
-     && this.form.value['edad']) {
+    if (this.form.value['colegio'] && this.form.value['edad'] &&
+    this.form.value['nombre_completo']&& this.form.value['correo_electronico']) {
       if(this.idMembershipsSelecionado > 0){
         let m = new Memberships();
         m.idMemberships = this.idMembershipsSelecionado;
@@ -81,10 +81,10 @@ export class StudentCreaeditaComponent implements OnInit {
       })
     }
       this.router.navigate(['students']);
-
+  }
     } else {
       this.mensaje = "Ingrese los datos !"
-    }}
+    }
 
   }
   // para Modificar
@@ -95,6 +95,8 @@ export class StudentCreaeditaComponent implements OnInit {
           idStudents: new FormControl(data.idStudents),
           colegio: new FormControl(data.colegio),
           edad: new FormControl(data.edad),
+          nombre_completo: new FormControl(data.nombre_completo),
+          correo_electronico: new FormControl(data.correo_electronico),
           //users_user_id: new FormControl(data.users_user_id),
           memberships: new FormControl(data.memberships.idMemberships),
           //rooms_id: new FormControl(data.rooms_id)

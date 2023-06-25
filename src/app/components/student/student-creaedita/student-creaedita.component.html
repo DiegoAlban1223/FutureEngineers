@@ -26,6 +26,17 @@
         </mat-form-field>
         <br>
 
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput placeholder="nombres" formControlName="nombre_completo" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input matInput placeholder="ejemplo@upc.edu.pe" formControlName="correo_electronico" required>
+        </mat-form-field>
+        <br>
+
         <!-- <mat-form-field class="example-full-width">
             <mat-label>User ID</mat-label>
             <input matInput placeholder="Código Usuario" formControlName="users_user_id" required>
@@ -39,7 +50,7 @@
         <br> -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Nombre Tutor</mat-label>
+          <mat-label>Beneficios de Membresía</mat-label>
           <mat-select formControlName="memberships" [(value)]="idMembershipsSelecionado" required>
             <mat-option *ngFor="let m of listaMemberships" [value]="m.idMemberships">
               {{m.beneficios}}
