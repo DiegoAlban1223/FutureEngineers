@@ -15,7 +15,7 @@ export class SimulationListarComponent implements OnInit {
 
   lista: Simulations[] = [];
   dataSource: MatTableDataSource<Simulations> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nombreC', 'planC', 'metodologiaC', 'duracionC', 'accions1', 'accions2'];
+  displayedColumns: string[] = ['id', 'name_curso', 'plan_curso', 'metodologia_curso', 'duracion_horas','professions', 'accions1', 'accions2'];
   //eliminar
   idMayor: number = 0;
   @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;

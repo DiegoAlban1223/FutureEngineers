@@ -32,25 +32,30 @@
                 <td mat-cell *matCellDef="let element"> {{element.idSimulations}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="nombreC">
+            <ng-container matColumnDef="name_curso">
                 <th mat-header-cell *matHeaderCellDef> Nombre del Curso </th>
-                <td mat-cell *matCellDef="let element"> {{element.nameCurso}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.name_curso}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="planC">
+            <ng-container matColumnDef="plan_curso">
                 <th mat-header-cell *matHeaderCellDef> Plan del Curso </th>
-                <td mat-cell *matCellDef="let element"> {{element.planCurso}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.plan_curso}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="metodologiaC">
+            <ng-container matColumnDef="metodologia_curso">
                 <th mat-header-cell *matHeaderCellDef> Metodología </th>
-                <td mat-cell *matCellDef="let element"> {{element.metodologiaCurso}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.metodologia_curso}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="duracionC">
+            <ng-container matColumnDef="duracion_horas">
                 <th mat-header-cell *matHeaderCellDef> Duración </th>
-                <td mat-cell *matCellDef="let element"> {{element.duracionHoras}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.duracion_horas}} </td>
             </ng-container>
+
+            <ng-container matColumnDef="professions">
+              <th mat-header-cell *matHeaderCellDef> Nombre de Profesión </th>
+              <td mat-cell *matCellDef="let element"> {{element.professions.nombre}} </td>
+          </ng-container>
 
             <!-- MODIFICAR -->
             <ng-container matColumnDef="accions1">
@@ -75,7 +80,7 @@
 
         </table>
         <br>
-        
+
         <mat-paginator
         [pageSizeOptions]="[5, 10, 20]"
         showFirstLastButtons

@@ -14,7 +14,7 @@ import { ExamsService } from 'src/app/services/exams.service';
 export class ListExamsComponent implements OnInit{
   lista: Exams[] = [];
   dataSource: MatTableDataSource<Exams> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'cantidadP', 'preguntaE', 'respuestaE', 'calificacion', 'simulation', 'accions1', 'accions2'];
+  displayedColumns: string[] = ['id', 'cantidad_preguntas', 'pregunta_exam', 'respuesta_exam', 'calificacion_exam', 'simulation', 'accions1', 'accions2'];
   //eliminar
   idMayor: number = 0;
   @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;

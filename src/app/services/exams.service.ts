@@ -39,9 +39,10 @@ export class ExamsService {
   }
 
   goUpdate(e: Exams) {
-    return this.http.put(this.url + "/" + e.idExams, e);
+    //return this.http.put(this.url + "/" + e.idExams, e);
+    return this.http.put(this.url, e);
   }
-  
+
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)
   }

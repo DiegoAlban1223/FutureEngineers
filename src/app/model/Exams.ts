@@ -1,9 +1,9 @@
 import { Simulations } from './simulations';
 export class Exams{
     idExams: number=0
-    cantidadPreguntas: number=0
-    preguntaExam: String=""
-    respuestaExam: String=""
-    calificacion: String=""
+    cantidad_preguntas: number=0
+    pregunta_exam: String=""
+    respuesta_exam: String=""
+    calificacion_exam: String=""
     simulation: Simulations= new Simulations()
 }

@@ -41,7 +41,7 @@ export class SimulationsService {
   update(s: Simulations) {
     return this.http.put(this.url, s);
   }
-  
+
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)
   }

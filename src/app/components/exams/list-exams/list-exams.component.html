@@ -32,29 +32,29 @@
                 <td mat-cell *matCellDef="let element"> {{element.idExams}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="cantidadP">
+            <ng-container matColumnDef="cantidad_preguntas">
                 <th mat-header-cell *matHeaderCellDef> Cantidad de Preguntas </th>
-                <td mat-cell *matCellDef="let element"> {{element.cantidadPreguntas}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.cantidad_preguntas}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="preguntaE">
+            <ng-container matColumnDef="pregunta_exam">
                 <th mat-header-cell *matHeaderCellDef> Preguntas </th>
-                <td mat-cell *matCellDef="let element"> {{element.preguntaExam}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.pregunta_exam}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="respuestaE">
+            <ng-container matColumnDef="respuesta_exam">
                 <th mat-header-cell *matHeaderCellDef> Respuestas </th>
-                <td mat-cell *matCellDef="let element"> {{element.respuestaExam}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.respuesta_exam}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="calificacion">
+            <ng-container matColumnDef="calificacion_exam">
                 <th mat-header-cell *matHeaderCellDef> Calificación </th>
-                <td mat-cell *matCellDef="let element"> {{element.calificacion}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.calificacion_exam}} </td>
             </ng-container>
 
             <ng-container matColumnDef="simulation">
-                <th mat-header-cell *matHeaderCellDef> ID Simulación </th>
-                <td mat-cell *matCellDef="let element"> {{element.simulation}} </td>
+                <th mat-header-cell *matHeaderCellDef> Nombre Simulación </th>
+                <td mat-cell *matCellDef="let element"> {{element.simulation.name_curso}} </td>
             </ng-container>
 
             <!-- MODIFICAR -->

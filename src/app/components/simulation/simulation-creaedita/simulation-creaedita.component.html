@@ -16,27 +16,38 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Curso</mat-label>
-          <input matInput placeholder="Curso" formControlName="nameCurso" required>
+          <input matInput placeholder="Curso" formControlName="name_curso" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
           <mat-label>Plan del Curso</mat-label>
-          <input matInput placeholder="Plan Curso" formControlName="planCurso" required>
+          <input matInput placeholder="Plan Curso" formControlName="plan_curso" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
             <mat-label>Metodología del Curso</mat-label>
-            <input matInput placeholder="Metodologia Curso" formControlName="metodologiaCurso" required>
+            <input matInput placeholder="Metodologia Curso" formControlName="metodologia_curso" required>
           </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
             <mat-label>Duración del Curso</mat-label>
-            <input matInput placeholder="Duracion en horas" formControlName="duracionHoras" required>
+            <input matInput placeholder="Duracion en horas" formControlName="duracion_horas" required>
           </mat-form-field>
         <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre Profesión</mat-label>
+          <mat-select formControlName="professions" [(value)]="idProfessionsSelecionado" required>
+            <mat-option *ngFor="let p of listaProfessions" [value]="p.idProfessions">
+              {{p.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/simulations">Cancelar</button>
