@@ -52,7 +52,7 @@
                 <td mat-cell *matCellDef="let element"> {{element.campo_laboral}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="simulation">
+            <!-- <ng-container matColumnDef="simulation">
                 <th mat-header-cell *matHeaderCellDef> ID Simulación </th>
                 <td mat-cell *matCellDef="let element"> {{element.simulation}} </td>
             </ng-container>
@@ -60,7 +60,7 @@
             <ng-container matColumnDef="tests">
                 <th mat-header-cell *matHeaderCellDef> ID Test </th>
                 <td mat-cell *matCellDef="let element"> {{element.test}} </td>
-            </ng-container>
+            </ng-container> -->
 
             <ng-container matColumnDef="accions1">
                 <th mat-header-cell *matHeaderCellDef> Actualizar </th>
@@ -83,6 +83,7 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
         </table>
+        <br>
         <mat-paginator
         [pageSizeOptions]="[5, 10, 20]"
         showFirstLastButtons

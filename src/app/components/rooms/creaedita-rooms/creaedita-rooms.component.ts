@@ -69,7 +69,7 @@ export class CreaeditaRoomsComponent implements OnInit {
       id: new FormControl(),
       codigo: new FormControl(),
       nombre: new FormControl(),
-      cantidad_alumnos: new FormControl(),
+      room_duration: new FormControl(),
       //Tutores_id: new FormControl(),
       //Tutores_User_user_id: new FormControl(),
       tutors: new FormControl(),
@@ -87,7 +87,7 @@ export class CreaeditaRoomsComponent implements OnInit {
     this.room.idRooms = this.form.value['id']; // SOLO AQUÍ SE LE COLOCA ID Y NO idRooms, a los demás SÍ
     this.room.codigo = this.form.value['codigo'];
     this.room.nombre = this.form.value['nombre'];
-    this.room.cantidad_alumnos = this.form.value['cantidad_alumnos'];
+    this.room.room_duration = this.form.value['room_duration'];
     //this.room.status = this.form.value['status'];
     this.room.tutor.nombre_completo = this.form.value['tutor.nombre_completo'];
     //this.room.user.rol = this.form.value['user.rol'] //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
@@ -147,7 +147,7 @@ export class CreaeditaRoomsComponent implements OnInit {
           id: new FormControl(data.idRooms),
           codigo: new FormControl(data.codigo),
           nombre: new FormControl(data.nombre),
-          cantidad_alumnos: new FormControl(data.cantidad_alumnos),
+          room_duration: new FormControl(data.room_duration),
           //Tutores_id: new FormControl(),
           //Tutores_User_user_id: new FormControl(),
           tutors: new FormControl(data.tutor.idTutors),

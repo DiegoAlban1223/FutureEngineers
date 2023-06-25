@@ -28,14 +28,14 @@ export class CreaeditaProfessionsComponent implements OnInit{
       informacion: new FormControl(),
       duracion: new FormControl(),
       campo_laboral: new FormControl(),
-      simulation: new FormControl(),
-      tests: new FormControl()
+      // simulation: new FormControl(),
+      // tests: new FormControl()
     })
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
-      this.init(); 
+      this.init();
     })
   }
 
@@ -45,19 +45,19 @@ export class CreaeditaProfessionsComponent implements OnInit{
     this.profession.informacion = this.form.value['informacion'];
     this.profession.duracion = this.form.value['duracion'];
     this.profession.campo_laboral = this.form.value['campo_laboral'];
-    this.profession.simulation= this.form.value['simulation'];
-    this.profession.tests= this.form.value['tests']
+    // this.profession.simulation= this.form.value['simulation'];
+    // this.profession.tests= this.form.value['tests']
 
-    if (this.form.value['nombre'].length > 0 && this.form.value['informacion'].length > 0
-      && this.form.value['duracion'].length > 0 && this.form.value['campo_laboral'].length > 0 
-      && this.form.value['simulation'] && this.form.value['tests']) {
-      if(this.edicion){
-        this.pS.goUpdate(this.profession).subscribe(()=>{
+    if (this.form.value['nombre'] && this.form.value['informacion']
+      && this.form.value['duracion'] && this.form.value['campo_laboral']) {
+
+        if(this.edicion){
+        this.pS.goUpdate(this.profession).subscribe((data)=>{
           this.pS.list().subscribe(data => {
           this.pS.setList(data)})
         })
-      }else{     
-        this.pS.insert(this.profession).subscribe(data => {
+      }else{
+        this.pS.insert(this.profession).subscribe((data) => {
         this.pS.list().subscribe(data => {
           this.pS.setList(data)
         })
@@ -75,12 +75,12 @@ export class CreaeditaProfessionsComponent implements OnInit{
       this.pS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
           id: new FormControl(data.idProfessions),
-          nameCurso: new FormControl(data.nombre),
+          nombre: new FormControl(data.nombre),
           informacion: new FormControl(data.informacion),
           duracion: new FormControl(data.duracion),
           campo_laboral: new FormControl(data.campo_laboral),
-          simulation: new FormControl(data.simulation),
-          tests: new FormControl(data.tests)
+          // simulation: new FormControl(data.simulation),
+          // tests: new FormControl(data.tests)
         })
       })
     }

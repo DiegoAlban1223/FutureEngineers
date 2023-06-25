@@ -61,8 +61,8 @@ export class StudentCreaeditaComponent implements OnInit {
     this.student.nombre_completo=this.form.value['nombre_completo'];
     this.student.correo_electronico=this.form.value['correo_electronico'];
 
-    if (this.form.value['colegio'].length > 0 && this.form.value['edad'].length > 0
-     && this.form.value['edad'].length > 0) {
+    if (this.form.value['colegio'] && this.form.value['edad']
+     && this.form.value['edad']) {
       if(this.idMembershipsSelecionado > 0){
         let m = new Memberships();
         m.idMemberships = this.idMembershipsSelecionado;

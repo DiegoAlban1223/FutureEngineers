@@ -7,6 +7,6 @@ export class Professions{
     informacion: String=""
     duracion: String=""
     campo_laboral: String=""
-    simulation: Simulations= new Simulations()
-    tests: Tests= new Tests()
+    // simulation: Simulations= new Simulations()
+    // tests: Tests= new Tests()
 }

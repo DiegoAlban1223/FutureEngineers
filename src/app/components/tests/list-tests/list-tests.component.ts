@@ -14,7 +14,8 @@ import { DialogoTestsComponent } from './dialogo-tests/dialogo-tests.component';
 export class ListTestsComponent implements OnInit{
   lista: Tests[] = [];
   dataSource: MatTableDataSource<Tests> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'preguntas', 'respuestas', 'resultado', 'ID', 'accions1', 'accions2'];
+  //displayedColumns: string[] = ['id', 'preguntas', 'respuestas', 'resultado', 'student', 'accions1', 'accions2'];
+  displayedColumns: string[] = ['id', 'preguntas', 'respuestas', 'resultado', 'student','professions', 'accions1', 'accions2'];
   //eliminar
   idMayor: number = 0;
   @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;

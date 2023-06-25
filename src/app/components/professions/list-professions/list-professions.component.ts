@@ -15,7 +15,8 @@ export class ListProfessionsComponent implements OnInit{
 
   lista: Professions[] = [];
   dataSource: MatTableDataSource<Professions> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nombre', 'informacion', 'duracion', 'campo_laboral','simulation','tests', 'accions1', 'accions2'];
+  //displayedColumns: string[] = ['id', 'nombre', 'informacion', 'duracion', 'campo_laboral','simulation','tests', 'accions1', 'accions2'];
+  displayedColumns: string[] = ['id', 'nombre', 'informacion', 'duracion', 'campo_laboral', 'accions1', 'accions2'];
   idMayor: number = 0;
   @ViewChild(MatPaginator, {static:true}) paginator!:MatPaginator;
 

@@ -14,6 +14,7 @@
         </div>
       <form [formGroup]="form" (submit)="aceptar()">
 
+
         <mat-form-field class="example-full-width">
           <mat-label>Nombre</mat-label>
           <input matInput placeholder="Curso" formControlName="nombre" required>
@@ -38,16 +39,6 @@
           </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Id Simulación</mat-label>
-            <input matInput placeholder="Duracion en horas" formControlName="simulation" required>
-          </mat-form-field>
-        <br>
-
-        <mat-form-field class="example-full-width">
-            <mat-label>Id Test</mat-label>
-            <input matInput placeholder="Duracion en horas" formControlName="tests" required>
-          </mat-form-field>
         <br>
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>

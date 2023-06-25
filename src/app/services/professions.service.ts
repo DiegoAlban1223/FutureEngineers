@@ -38,9 +38,10 @@ export class ProfessionsService {
   }
 
   goUpdate(p: Professions) {
-    return this.http.put(this.url + "/" + p.idProfessions, p);
+    //return this.http.put(this.url + "/" + p.idProfessions, p);
+    return this.http.put(this.url, p);
   }
-  
+
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`)
   }

@@ -34,14 +34,25 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Estudiante</mat-label>
-            <mat-select formControlName="ID" [(value)]="idStudentSelecionado" required>
-              <mat-option *ngFor="let u of list" [value]="u.idStudents">
-                {{u.nombre_completo}}
+            <mat-select formControlName="student" [(value)]="idStudentSelecionado" required>
+              <mat-option *ngFor="let s of listStudents" [value]="s.idStudents">
+                {{s.nombre_completo}}
               </mat-option>
             </mat-select>
         </mat-form-field>
         <br>
-        
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Profesión</mat-label>
+          <mat-select formControlName="professions" [(value)]="idProfessionsSelecionado" required>
+            <mat-option *ngFor="let p of listProfessions" [value]="p.idProfessions">
+              {{p.nombre}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <br>
+
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/tests">Cancelar</button>
