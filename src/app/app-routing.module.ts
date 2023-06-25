@@ -23,6 +23,7 @@ import { RoomsComponent } from './components/rooms/rooms.component';
 import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
 import { ReportesComponent } from './components/reportes/reportes.component';
 import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';
+import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
 
 const routes: Routes = [
 
@@ -137,6 +138,9 @@ const routes: Routes = [
     {
       path:'reporte1',component:Reporte01Component
     },
+    {
+      path: 'reporte2', component:Reporte02Component
+    }
   ]
   }
 ]

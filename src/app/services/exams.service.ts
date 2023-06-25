@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Exams } from '../model/Exams';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { examsSimulationDTO } from '../model/examsSimulationDTO';
 
 const base_url= environment.base
 
@@ -52,5 +53,9 @@ export class ExamsService {
   }
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
+  }
+
+  getExamsCountBySimulations(): Observable<examsSimulationDTO[]>{
+    return this.http.get<examsSimulationDTO[]>(`${this.url}/exams-count`);
   }
 }
