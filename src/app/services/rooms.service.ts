@@ -35,7 +35,7 @@ export class RoomsService {
 
   }
 
-  goUpdate(ro: Rooms) {
+  update(ro: Rooms) {
     //return this.http.put(this.url + "/" + p.idRooms, p);
     return this.http.put(this.url, ro);
   }

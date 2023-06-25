@@ -44,7 +44,7 @@
           <mat-label>Tutores_id</mat-label>
           <mat-select formControlName="tutors" [(value)]="idTutorsSeleccionado" required>
             <mat-option *ngFor="let t of listaTutors" [value]="t.idTutors">
-              {{t.idTutors}}
+              {{t.nombre_completo}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -64,18 +64,18 @@
           <mat-label>Chats_id</mat-label>
           <mat-select formControlName="chats" [(value)]="idChatsSeleccionado" required>
             <mat-option *ngFor="let c of listaChats" [value]="c.idChats">
-              {{c.mensaje_tutor}}
+              {{c.idChats}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill">
           <mat-label>status</mat-label>
           <mat-select [(ngModel)]="status">
-            <mat-option [value]="true">true</mat-option>
-            <mat-option [value]="false">false</mat-option>
+            <mat-option [value]="true">True</mat-option>
+            <mat-option [value]="false">False</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
 
 
         <div style="text-align: center;">
