@@ -21,6 +21,8 @@ import { TutorsComponent } from './components/tutors/tutors.component';
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
 import { CreaeditaRoomsComponent } from './components/rooms/creaedita-rooms/creaedita-rooms.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';
 
 const routes: Routes = [
 
@@ -130,6 +132,13 @@ const routes: Routes = [
     }
   ]
   },
+  {path: 'reportes', component:ReportesComponent, children:
+  [
+    {
+      path:'reporte1',component:Reporte01Component
+    },
+  ]
+  }
 ]
 
 

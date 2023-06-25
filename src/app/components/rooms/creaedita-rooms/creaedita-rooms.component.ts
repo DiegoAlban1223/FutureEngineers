@@ -99,42 +99,31 @@ export class CreaeditaRoomsComponent implements OnInit {
     //&&
 
     if (this.idChatsSeleccionado > 0 && this.idTutorsSeleccionado > 0) {
-      let c = new Chats();
-      let t = new Tutors();
-      let s = new Students();
-      c.idChats = this.idChatsSeleccionado;
-      t.idTutors = this.idTutorsSeleccionado;
-      s.idStudents = this.idStudentsSelecionado;
-      this.room.chat = c;
-      this.room.tutor = t;
-      this.room.student = s;
-      if (this.edicion) {
-        // let c = new Chats();
-        // let t = new Tutors();
-        // c.idChats = this.idChatsSeleccionado;
-        // t.idTutors = this.idTutorsSeleccionado;
-        // this.room.chat=c;
-        // this.room.tutor = t;
-        this.rS.update(this.room).subscribe(() => {
-          this.rS.list().subscribe((data) => {
-            this.rS.setList(data);
-          })
-        })
-      } else {
-        // let c = new Chats();
-        // let t = new Tutors();
-        // c.idChats = this.idChatsSeleccionado;
-        // t.idTutors = this.idTutorsSeleccionado;
-        // this.room.chat=c;
-        // this.room.tutor = t;
+       let c = new Chats();
+        let t = new Tutors();
+        c.idChats = this.idChatsSeleccionado;
+        t.idTutors = this.idTutorsSeleccionado;
+        this.room.chat=c;
+        this.room.tutor = t;
         this.rS.insert(this.room).subscribe(() => {
           this.rS.list().subscribe((data) => {
             this.rS.setList(data);
           })
         })
+        this.router.navigate(['rooms'])
       }
-      this.router.navigate(['rooms']);
-    } else {
+   
+      if (this.form.value['codigo'].length > 0 && this.form.value['nombre'].length > 0 && this.form.value['room_duration'].length > 0) {
+         if (this.edicion) {
+          this.rS.update(this.room).subscribe(() => {
+            this.rS.list().subscribe((data) => {
+            this.rS.setList(data);
+          })
+        })
+      }
+        this.router.navigate(['rooms'])
+
+      } else {
       this.mensaje = 'Ingrese los datos de la Sala';
     }
   }

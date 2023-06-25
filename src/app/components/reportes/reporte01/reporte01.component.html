@@ -1,0 +1,37 @@
+<app-navbar>
+</app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1>Cantidad de simulaciones por profesión</h1>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="profession">
+        <th mat-header-cell *matHeaderCellDef> Profesión </th>
+        <td mat-cell *matCellDef="let element of simulationCounts"> {{element.nombre}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="cantidad">
+        <th mat-header-cell *matHeaderCellDef> Cantidad de simulaciones </th>
+        <td mat-cell *matCellDef="let element of simulationCounts"> {{element.simulationCount}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</body>
+
+</html>

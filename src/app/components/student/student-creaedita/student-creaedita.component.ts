@@ -34,7 +34,7 @@ export class StudentCreaeditaComponent implements OnInit {
   });
 
     this.form = new FormGroup({
-      idStudents: new FormControl(),
+      id: new FormControl(),
       colegio: new FormControl(),
       edad: new FormControl(),
       //users_user_id: new FormControl(),
@@ -61,38 +61,64 @@ export class StudentCreaeditaComponent implements OnInit {
     this.student.nombre_completo=this.form.value['nombre_completo'];
     this.student.correo_electronico=this.form.value['correo_electronico'];
 
-    if (this.form.value['colegio'] && this.form.value['edad'] &&
-    this.form.value['nombre_completo']&& this.form.value['correo_electronico']) {
-      if(this.idMembershipsSelecionado > 0){
-        let m = new Memberships();
-        m.idMemberships = this.idMembershipsSelecionado;
-        this.student.memberships = m;
+  //   if (this.form.value['colegio'] && this.form.value['edad'] &&
+  //   this.form.value['nombre_completo']&& this.form.value['correo_electronico']) {
+  //     if(this.idMembershipsSelecionado > 0){
+  //       let m = new Memberships();
+  //       m.idMemberships = this.idMembershipsSelecionado;
+  //       this.student.memberships = m;
 
+  //       if(this.edicion){
+  //       this.aS.goUpdate(this.student).subscribe(()=>{
+  //         this.aS.list().subscribe(data => {
+  //         this.aS.setList(data)})
+  //       })
+  //     }else{
+  //       this.aS.insert(this.student).subscribe(data => {
+  //       this.aS.list().subscribe(data => {
+  //         this.aS.setList(data)
+  //       })
+  //     })
+  //   }
+  //     this.router.navigate(['students']);
+  // }
+  //   } else {
+  //     this.mensaje = "Ingrese los datos !"
+  //   }
+  if(this.idMembershipsSelecionado > 0){
+      let m = new Memberships();
+      m.idMemberships = this.idMembershipsSelecionado;
+      this.student.memberships = m;
+
+      this.aS.insert(this.student).subscribe(data => {
+      this.aS.list().subscribe(data => {
+      this.aS.setList(data);
+       })
+    })
+    this.router.navigate(['students']);
+ }
+
+  if (this.form.value['colegio'].length > 0 &&
+      this.form.value['nombre_completo'].length > 0 && this.form.value['correo_electronico'].length > 0) {
         if(this.edicion){
-        this.aS.goUpdate(this.student).subscribe(()=>{
+          this.aS.update(this.student).subscribe((data)=>{
           this.aS.list().subscribe(data => {
-          this.aS.setList(data)})
-        })
-      }else{
-        this.aS.insert(this.student).subscribe(data => {
-        this.aS.list().subscribe(data => {
           this.aS.setList(data)
-        })
-      })
-    }
+          })
+        });
+        }
       this.router.navigate(['students']);
-  }
-    } else {
-      this.mensaje = "Ingrese los datos !"
-    }
+      }else{
+        this.mensaje = "Ingrese los datos de Estudiante!"
+      }
+}
 
-  }
   // para Modificar
   init() {
     if (this.edicion) {
       this.aS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idStudents: new FormControl(data.idStudents),
+          id: new FormControl(data.idStudents),
           colegio: new FormControl(data.colegio),
           edad: new FormControl(data.edad),
           nombre_completo: new FormControl(data.nombre_completo),

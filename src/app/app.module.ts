@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //llenar
-import { MatTableModule } from '@angular/material/table';
+import {MatTableModule} from '@angular/material/table';
 import { SimulationComponent } from './components/simulation/simulation.component';
 import { SimulationListarComponent } from './components/simulation/simulation-listar/simulation-listar.component';
 import {MatCardModule} from '@angular/material/card';
@@ -56,7 +56,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { TutorsComponent } from './components/tutors/tutors.component';
 import { ListTutorsComponent } from './components/tutors/list-tutors/list-tutors.component';
 import { CreaeditaTutorsComponent } from './components/tutors/creaedita-tutors/creaedita-tutors.component';
-import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';///////////////true or false -modulo angular material boleano para Rooms
+import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-tutors/dialogo-tutors.component';
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { Reporte01Component } from './components/reportes/reporte01/reporte01.component';
+import { Reporte02Component } from './components/reportes/reporte02/reporte02.component';
+import { Reporte03Component } from './components/reportes/reporte03/reporte03.component';
+import { Reporte04Component } from './components/reportes/reporte04/reporte04.component';///////////////true or false -modulo angular material boleano para Rooms
 
 
 @NgModule({
@@ -102,7 +107,12 @@ import { DialogoTutorsComponent } from './components/tutors/list-tutors/dialogo-
     TutorsComponent,
     ListTutorsComponent,
     CreaeditaTutorsComponent,
-    DialogoTutorsComponent
+    DialogoTutorsComponent,
+    ReportesComponent,
+    Reporte01Component,
+    Reporte02Component,
+    Reporte03Component,
+    Reporte04Component
 
   ],
   imports: [

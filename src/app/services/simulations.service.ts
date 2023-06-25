@@ -53,7 +53,7 @@ export class SimulationsService {
     this.confirmarEliminacion.next(estado);
   }
 
-  getSimulationsCountByProfessions(): Observable<professionsSimulationDTO[]> {
+  getcountSimulationByProfession(): Observable<professionsSimulationDTO[]> {
     return this.http.get<professionsSimulationDTO[]>(`${this.url}/simulations-count`);
   }
 }

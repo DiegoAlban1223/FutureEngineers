@@ -56,26 +56,27 @@ export class SimulationCreaeditaComponent implements OnInit {
     this.simulation.duracion_horas = this.form.value['duracion_horas'];
     this.simulation.professions.nombre = this.form.value['professions.nombre']
 
-    if (this.form.value['name_curso'] && this.form.value['plan_curso'] && this.form.value['metodologia_curso'] && this.form.value['duracion_horas']) {
-      if(this.idProfessionsSelecionado > 0){
+    if(this.idProfessionsSelecionado > 0){
         let p = new Professions();
         p.idProfessions = this.idProfessionsSelecionado;
         this.simulation.professions = p;
 
-      if(this.edicion){
-        this.aS.update(this.simulation).subscribe(()=>{
-          this.aS.list().subscribe(data => {
-          this.aS.setList(data)})
-        })
-      }else{
         this.aS.insert(this.simulation).subscribe(data => {
         this.aS.list().subscribe(data => {
           this.aS.setList(data)
         })
       })
-    }
       this.router.navigate(['simulations']);
-}
+    }
+      
+    if (this.form.value['name_curso'] && this.form.value['plan_curso'] && this.form.value['metodologia_curso'] && this.form.value['duracion_horas']) {
+      if(this.edicion){
+        this.aS.update(this.simulation).subscribe(()=>{
+          this.aS.list().subscribe(data => {
+          this.aS.setList(data)})
+      });
+      }      
+        this.router.navigate(['simulations']);
     } else {
       this.mensaje = "Ingrese los datos de la simulación!!"
     }
