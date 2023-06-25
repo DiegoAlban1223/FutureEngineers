@@ -10,6 +10,8 @@ import { RoomsService } from 'src/app/services/rooms.service';
 import { ChatsService } from 'src/app/services/chats.service';
 import { UsersService } from 'src/app/services/users.service';
 import { tutorsService } from 'src/app/services/tutors.service';
+import { Students } from 'src/app/model/students';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-creaedita-rooms',
@@ -24,11 +26,13 @@ export class CreaeditaRoomsComponent implements OnInit {
   listaChats: Chats[] = [];
   //listaUsers: Users[] = []; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
   listaTutors: Tutors[] = [];
+  listaStudents: Students[] = [];
 
   idChatsSeleccionado: number = 0;
   //idUsersSeleccionado: number = 0; //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
   //status: boolean = false;
   idTutorsSeleccionado: number = 0;
+  idStudentsSelecionado:number = 0;
 
   id: number = 0;
   edicion: boolean = false;
@@ -39,14 +43,17 @@ export class CreaeditaRoomsComponent implements OnInit {
     private route: ActivatedRoute,
     private cS: ChatsService,
     //private uS: UsersService, //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
-    private tS: tutorsService
+    private tS: tutorsService,
+    private sS: StudentService
   ) {}
 
   ngOnInit(): void {
     this.cS.list().subscribe((data) => {
       this.listaChats = data;
     });
-    //this.uS.list().subscribe(data => {this.listaUsers = data}); //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
+
+    this.sS.list().subscribe(data => {this.listaStudents = data}); //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
+
     this.tS.list().subscribe((data) => {
       this.listaTutors = data;
     });
@@ -69,6 +76,7 @@ export class CreaeditaRoomsComponent implements OnInit {
       //status: new FormControl(),
       //Chats_id: new FormControl(),
       chats: new FormControl(),
+      students: new FormControl()
       //users:new FormControl() //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
 
       /*,
@@ -85,6 +93,7 @@ export class CreaeditaRoomsComponent implements OnInit {
     //this.room.user.rol = this.form.value['user.rol'] //DESVINCULANDO ROOMS DE USER PARA IMPLEMENTAR SECURITY
     //this.room.Chats_id.mensaje_tutor = this.form.value['chats.mensaje_tutor']
     this.room.chat.idChats = this.form.value['chat.idChats'];
+    this.room.student.nombre_completo = this.form.value['student.nombre_completo'];
 
     //if (this.form.value['nombre'].length > 0 && this.form.value['cantidad_alumnos'].length > 0 && this.form.value['codigo'].length > 0
     //&&
@@ -92,10 +101,13 @@ export class CreaeditaRoomsComponent implements OnInit {
     if (this.idChatsSeleccionado > 0 && this.idTutorsSeleccionado > 0) {
       let c = new Chats();
       let t = new Tutors();
+      let s = new Students();
       c.idChats = this.idChatsSeleccionado;
       t.idTutors = this.idTutorsSeleccionado;
+      s.idStudents = this.idStudentsSelecionado;
       this.room.chat = c;
       this.room.tutor = t;
+      this.room.student = s;
       if (this.edicion) {
         // let c = new Chats();
         // let t = new Tutors();
@@ -142,6 +154,7 @@ export class CreaeditaRoomsComponent implements OnInit {
           //status: new FormControl(this.status),
           //Chats_id: new FormControl(),
           chats: new FormControl(data.chat.idChats),
+          students: new FormControl(data.student.idStudents)
         });
       });
     }

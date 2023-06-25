@@ -26,22 +26,31 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
             <mat-label>User ID</mat-label>
             <input matInput placeholder="Código Usuario" formControlName="users_user_id" required>
           </mat-form-field>
-        <br>
+        <br> -->
 
-        <mat-form-field class="example-full-width">
+        <!-- <mat-form-field class="example-full-width">
             <mat-label>Membresia ID</mat-label>
-            <input matInput placeholder="Código membresía" formControlName="memberships_id" required>
+            <input matInput placeholder="Código membresía" formControlName="memberships" required>
           </mat-form-field>
-        <br>
+        <br> -->
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre Tutor</mat-label>
+          <mat-select formControlName="memberships" [(value)]="idMembershipsSelecionado" required>
+            <mat-option *ngFor="let m of listaMemberships" [value]="m.idMemberships">
+              {{m.beneficios}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="example-full-width">
           <mat-label>Sala ID</mat-label>
           <input matInput placeholder="Código sala" formControlName="rooms_id" required>
-        </mat-form-field>
+        </mat-form-field> -->
         <br>
         <div style="text-align: center;">
             <button mat-raised-button color="primary">Aceptar</button>
