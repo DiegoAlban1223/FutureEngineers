@@ -32,7 +32,7 @@ export class CreaeditaExamsComponent implements OnInit{
   });
 
     this.form = new FormGroup({
-      idExams: new FormControl(),
+      id: new FormControl(),
       cantidad_preguntas: new FormControl(),
       pregunta_exam: new FormControl(),
       respuesta_exam: new FormControl(),
@@ -85,7 +85,7 @@ export class CreaeditaExamsComponent implements OnInit{
     if (this.edicion) {
       this.eS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
-          idExams: new FormControl(data.idExams),
+          id: new FormControl(data.idExams),
           cantidad_preguntas: new FormControl(data.cantidad_preguntas),
           pregunta_exam: new FormControl(data.pregunta_exam),
           respuesta_exam: new FormControl(data.respuesta_exam),

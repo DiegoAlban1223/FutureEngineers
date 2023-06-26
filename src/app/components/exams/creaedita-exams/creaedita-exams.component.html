@@ -16,30 +16,30 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Cantidad de Preguntas</mat-label>
-          <input matInput placeholder="Cantidad de Preguntas" formControlName="cantidad_preguntas" required>
+          <input matInput placeholder="20" formControlName="cantidad_preguntas" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Pregunta de examen</mat-label>
-          <input matInput placeholder="Pregunta de exam" formControlName="pregunta_exam" required>
+          <mat-label>Dificultad de examen</mat-label>
+          <input matInput placeholder="Alto" formControlName="pregunta_exam" required>
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
-            <mat-label>Respuesta de examen</mat-label>
-            <input matInput placeholder="Respuesta de examen" formControlName="respuesta_exam" required>
+            <mat-label>Tipo examen</mat-label>
+            <input matInput placeholder="Oral" formControlName="respuesta_exam" required>
           </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
-            <mat-label>Calificación del exam</mat-label>
-            <input matInput placeholder="Calificación del exam" formControlName="calificacion_exam" required>
+            <mat-label>Calificación del examen</mat-label>
+            <input matInput placeholder="20" formControlName="calificacion_exam" required>
           </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill">
-          <mat-label>Nombre Simulacion</mat-label>
+          <mat-label>Nombre Simulación</mat-label>
           <mat-select formControlName="simulation" [(value)]="idSimulationSelecionado" required>
             <mat-option *ngFor="let s of listaSimulation" [value]="s.idSimulations">
               {{s.name_curso}}
