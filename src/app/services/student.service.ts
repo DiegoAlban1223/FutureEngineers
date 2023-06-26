@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Students } from '../model/students';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { studentsMembershipsDTO } from '../model/studentsMembershipDTO';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ export class StudentService {
   private url = `${environment.base}/students`
   private listaCambio= new Subject<Students[]>();
   private confirmarEliminacion = new Subject<Boolean>()
-  
+
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<Students[]>(this.url);
@@ -46,5 +47,9 @@ export class StudentService {
   }
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
+  }
+
+  getCountStudentsByMemberships(): Observable<studentsMembershipsDTO[]> {
+    return this.http.get<studentsMembershipsDTO[]>(`${this.url}/rooms-count`);
   }
 }
