@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Rooms } from '../model/rooms';
+import { roomsTutorsDTO } from '../model/roomsTutorsDTO';
 const base_url = environment.base
 
 @Injectable({
@@ -49,5 +50,9 @@ export class RoomsService {
   }
   setConfirmDelete(estado:Boolean){
     this.confirmarEliminacion.next(estado);
+  }
+
+  getcountRoomsByTutors(): Observable<roomsTutorsDTO[]> {
+    return this.http.get<roomsTutorsDTO[]>(`${this.url}/rooms-count`);
   }
 }
