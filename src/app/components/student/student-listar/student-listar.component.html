@@ -35,7 +35,10 @@
           <th mat-header-cell *matHeaderCellDef> Código </th>
           <td mat-cell *matCellDef="let element"> {{element.idStudents}} </td>
         </ng-container>
-
+        <ng-container matColumnDef="nombre_completo">
+          <th mat-header-cell *matHeaderCellDef> Nombre</th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
+        </ng-container>
         <!-- Name Column -->
         <ng-container matColumnDef="colegio">
           <th mat-header-cell *matHeaderCellDef> Colegio </th>
@@ -60,10 +63,6 @@
           <td mat-cell *matCellDef="let element"> {{element.memberships.beneficios}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="nombre_completo">
-          <th mat-header-cell *matHeaderCellDef> nombreCompleto </th>
-          <td mat-cell *matCellDef="let element"> {{element.nombre_completo}} </td>
-        </ng-container>
         <ng-container matColumnDef="correo_electronico">
           <th mat-header-cell *matHeaderCellDef> Correo </th>
           <td mat-cell *matCellDef="let element"> {{element.correo_electronico}} </td>
