@@ -9,10 +9,10 @@ import { StudentService } from 'src/app/services/student.service';
   styleUrls: ['./reporte04.component.css']
 })
 export class Reporte04Component {
-  studentsCounts: studentsMembershipsDTO[] = [];
+  studentCounts: studentsMembershipsDTO[] = [];
   dataSource: MatTableDataSource<studentsMembershipsDTO> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['students','cantidad']
+  displayedColumns: string[] = ['student','cantidad']
 
   constructor(private sS: StudentService) { }
 
@@ -25,7 +25,7 @@ export class Reporte04Component {
   getCountStudentsByMemberships(): void {
     this.sS.getCountStudentsByMemberships()
       .subscribe((data: studentsMembershipsDTO[]) => {
-        this.studentsCounts = data;
+        this.studentCounts = data;
       });
   }
 }

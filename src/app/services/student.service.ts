@@ -50,6 +50,6 @@ export class StudentService {
   }
 
   getCountStudentsByMemberships(): Observable<studentsMembershipsDTO[]> {
-    return this.http.get<studentsMembershipsDTO[]>(`${this.url}/rooms-count`);
+    return this.http.get<studentsMembershipsDTO[]>(`${this.url}/students-count`);
   }
 }
